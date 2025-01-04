@@ -1,0 +1,30 @@
+{
+  "name": "@k-ink/core",
+  "module": "src/index.tsx",
+  "type": "module",
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@types/bun": "latest",
+    "@types/react": "^19.0.1",
+    "react-devtools-core": "^6.0.1",
+    "rimraf": "^6.0.1"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@langchain/core": "^0.3.23",
+    "@langchain/langgraph": "^0.2.30",
+    "@langchain/openai": "^0.3.14",
+    "ink": "^5.1.0",
+    "react": "^18",
+    "zod": "^3.24.1"
+  },
+  "scripts": {
+    "bundle": "scripts/bundle.sh",
+    "postbundle": "scripts/postbundle.sh",
+    "compile": "scripts/compile.sh",
+    "build": "scripts/build.sh",
+    "dev": "scripts/dev.sh"
+  }
+}
