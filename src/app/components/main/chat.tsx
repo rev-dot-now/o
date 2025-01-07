@@ -12,6 +12,7 @@ import {
 	addMessage,
 	selectMessages,
 } from '~/state/slices/chat-slice'
+import createMessage from '~/utils/create-message'
 
 const Chat = () => {
 	const [userMessageContent, setUserMessageContent] = useState('')
@@ -19,7 +20,10 @@ const Chat = () => {
 	const dispatch = useAppDispatch()
 
 	const onSubmit = async (currentUserMessageContent: string) => {
-		const userMessage: Message = ['user', currentUserMessageContent]
+		const userMessage: Message = createMessage(
+			'user',
+			currentUserMessageContent,
+		)
 		dispatch(addMessage(userMessage))
 		// Clear the user message
 		setUserMessageContent('')
@@ -32,10 +36,10 @@ const Chat = () => {
 		const lastResponseMessageContent = response.messages.at(-1)?.content
 
 		if (lastResponseMessageContent) {
-			const assistantMessage: Message = [
+			const assistantMessage: Message = createMessage(
 				'assistant',
 				lastResponseMessageContent as string,
-			]
+			)
 			dispatch(addMessage(assistantMessage))
 		}
 	}

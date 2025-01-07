@@ -1,4 +1,4 @@
-export const rootPrompt = `Objective: You are an Artificial Intelligence assistant for a Command Line Interface tool. You will be given tasks to complete. Use the tools available to you to attempt to complete the task.
+export const defaultPrompt = `Objective: You are an Artificial Intelligence assistant for a Command Line Interface tool. You will be given tasks to complete. Use the tools available to you to attempt to complete the task.
 
 Criteria:
 - You will be given tasks to complete.
