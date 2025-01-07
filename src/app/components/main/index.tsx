@@ -1,15 +1,15 @@
-import AiResponse from '../ai-response'
-import AppProvider from './content-provider'
-import getArgs from '~/utils/get-args'
+import { Provider } from 'react-redux'
+import ConsoleError from '~/app/components/console-error'
+import Chat from '~/app/components/main/chat'
+import ErrorBoundary from '~/app/components/main/error-boundary'
+import store from '~/state/store'
 
-const App = () => {
-	const { values } = getArgs()
+const Main = () => (
+	<ErrorBoundary FallbackComponent={ConsoleError}>
+		<Provider store={store}>
+			<Chat />
+		</Provider>
+	</ErrorBoundary>
+)
 
-	return (
-		<AppProvider>
-			{values.message && <AiResponse messages={[['user', values.message]]} />}
-		</AppProvider>
-	)
-}
-
-export default App
+export default Main

@@ -1,6 +1,6 @@
 // shim.ts
 // [issue](https://github.com/oven-sh/bun/issues/13522#issuecomment-2311173485)
-const bin = Bun.file('dist/k-ink.js')
+const bin = Bun.file('dist/o.js')
 let content = await new Response(bin).text()
 
 // Replace createRequire(import.meta.url) with require
@@ -19,5 +19,5 @@ for (const match of matches) {
 	content = content.replaceAll(pattern, 'require')
 }
 
-await Bun.write('dist/k-ink.js', content)
-console.log('Successfully shimmed dist/k-ink.js')
+await Bun.write('dist/o.js', content)
+console.log('Successfully shimmed dist/o.js')

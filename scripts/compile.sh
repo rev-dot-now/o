@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-bun build --compile dist/k-ink.js --outfile dist/k-ink
+bun build --compile dist/o.js --outfile dist/o
