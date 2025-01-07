@@ -7,10 +7,13 @@ interface AiResponseProps {
 }
 
 const ChatLog = ({ messages }: AiResponseProps) =>
-	messages.map(([role, message]) => (
-		<Text key={`${message.slice(0, 10)}`} color={getRoleColor(role)}>
-			{message}
-		</Text>
-	))
+	messages.map(
+		([role, message]) =>
+			role !== 'system' && (
+				<Text key={`${message.slice(0, 10)}`} color={getRoleColor(role)}>
+					{message}
+				</Text>
+			),
+	)
 
 export default ChatLog
