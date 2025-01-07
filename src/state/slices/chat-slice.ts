@@ -1,6 +1,7 @@
 import type { BaseMessageLike } from '@langchain/core/messages'
 import { createSlice } from '@reduxjs/toolkit'
-import { rootTemplate } from '~/app/prompts/system'
+import { rootPrompt } from '~/prompts/system'
+
 import type { RootState } from '~/state/store'
 
 export type Message = BaseMessageLike & [string, string]
@@ -10,7 +11,7 @@ export type AppState = {
 }
 
 export const initialState: AppState = {
-	messages: [['system', rootTemplate]],
+	messages: [['system', rootPrompt]],
 }
 
 const chatSlice = createSlice({
