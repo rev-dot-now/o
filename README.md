@@ -8,21 +8,22 @@ Welcome to **o**—your self-referential CLI tool that’s here to revolutionize
 - **Cross-Platform**: Built with the latest tech stack, **o** runs smoothly on any platform. No more compatibility headaches! 🛠️
 - **Community Driven**: Join a growing community of innovators and creators. Your ideas can shape the future of **o**!
 
-## Table of Contents 📚
+## Table of Contents
 
-- [Installation from Source](#installation-from-source-)
-- [Run Locally](#run-locally-)
-- [Build](#build-)
-- [Usage Examples](#usage-examples-)
+- [Tools](tools)
+- [Installation from Source](#installation-from-source)
+- [Run Locally](#run-locally)
+- [Build](#build)
+- [Usage Examples](#usage-examples)
   - [Vanilla Mode](#vanilla-mode)
   - [Read Input from Stdin](#read-input-from-stdin)
   - [Use System Prompts](#use-system-prompts)
-- [Technologies Used](#technologies-used-)
-- [Contribution Guidelines](#contribution-guidelines-)
-- [License](#license-)
-- [Contact](#contact-)
+- [Technologies Used](#technologies-used)
+- [Contribution Guidelines](#contribution-guidelines)
+- [License](#license)
+- [Contact](#contact)
 
-## Tools 🛠️
+## Tools
 
 The **o** architecture has several tools available for basic file-system operations, all powered by the latest in AI technology. Here’s what you can do:
 - **dir-create**: Create a directory.
@@ -36,7 +37,7 @@ The **o** architecture has several tools available for basic file-system operati
 
 These tools may sound basic, but they are the foundation of **o**'s unique capabilities. You can easily ask **o** to create new tools from scratch! During development, only two tools—`file-read` and `file-write`—were initially created. All other tools were generated within **o**'s self-hosted environment. 🌱
 
-## Installation from Source 🚀
+## Installation from Source
 
 Getting started with **o** is a breeze! Just clone the repository and install Bun, and you’re ready to dive into the world of meta-programming and content generation like never before.
 
@@ -47,7 +48,7 @@ Getting started with **o** is a breeze! Just clone the repository and install Bu
 - Install Bun:
   [Documentation](https://bun.sh/docs/installation)
 
-## Run Locally 🏃‍♂️
+## Run Locally
 
 Ready to see **o** in action? Running it locally is straightforward. Fire up your terminal and run the command below. You’ll be generating content and automating tasks in no time!
 
@@ -55,7 +56,7 @@ Ready to see **o** in action? Running it locally is straightforward. Fire up you
 bun run dev
 ```
 
-## Build 🏗️
+## Build
 
 Want to take it a step further? Building the **o** command is your next move. This will create the `o` command in the `dist/` folder at the root of the project. Once built, you can copy the produced binary and use it anywhere on your system.
 
@@ -63,7 +64,7 @@ Want to take it a step further? Building the **o** command is your next move. Th
 bun run build
 ```
 
-## Usage Examples 💡
+## Usage Examples
 
 With **o** successfully set up, let's explore some practical examples of its capabilities. With **o**, you can generate content, automate repetitive tasks, and explore the depths of meta-programming.
 
@@ -135,7 +136,7 @@ $ bun run dev -s ./prompt.txt "Hello there!"
 *Pffft!*
 ```
 
-## Technologies Used 🛠️
+## Technologies Used
 
 **o** is built on a powerful tech stack that includes:
 - **Ink**: A library for building interactive command-line applications, enhancing the user experience.
@@ -147,14 +148,14 @@ $ bun run dev -s ./prompt.txt "Hello there!"
 
 Check out the full list of dependencies in our [package.json](./package.json) for more details!
 
-## Contribution Guidelines 🤝
+## Contribution Guidelines
 
 We welcome contributions! If you have ideas, suggestions, or improvements, please feel free to contribute. Together, we can make **o** even better!
 
-## License 📜
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details. We’re excited to share **o** with the world!
 
-## Contact 📬
+## Contact
 
 If you have questions or need support, we're here to help! Feel free to reach out to us at <a href="mailto:hans@oksendahl.com">hans@oksendahl.com</a>. We love hearing from our users! 🌟
