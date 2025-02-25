@@ -34,7 +34,7 @@ bun run dev
 
 ## Build
 
-Want to take it a step further? Building the **o** command is your next move. This will create the `o` command in the `dist/` folder at the root of the project. Once built, you can use it anywhere on your system.
+Want to take it a step further? Building the **o** command is your next move. This will create the `o` command in the `dist/` folder at the root of the project. Once built, you can copy the produced binary and use it anywhere on your system.
 
 ```bash
 bun run build
@@ -47,6 +47,7 @@ Now that you have **o** up and running, let’s check out some examples. With **
 ### Interactive mode
 
 ```bash
+# You can run the tool without any arguments to start a dialog with the agent.
 $ bun run dev
 > Hello there!
 Hello! How can I assist you today?
@@ -65,6 +66,7 @@ If you have a specific task in mind, just let me know!
 ### Read Input from Stdin
 
 ```bash
+# You can pass in a string from stdin to start the conversation
 $ bun run dev "Write a poem about penguins to blah.txt."
 > Write a poem about penguins to blah.txt.
 I have written a poem about penguins to the file "blah.txt". If you need anything else, feel free to ask!
@@ -98,6 +100,7 @@ If you need anything else, just let me know!
 
 ```bash
 echo "You talk in fart noises." > prompt.txt
+
 # The `-s` flag specifies the location of a system prompt.
 $ bun run dev -s ./prompt.txt "Hello there!"
 > Hello there!
