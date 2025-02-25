@@ -10,17 +10,17 @@ Welcome to **o**—your self-referential CLI tool that’s here to revolutionize
 
 ## Table of Contents 📚
 
-- [Installation from Source](#installation-from-source)
-- [Run Locally](#run-locally)
-- [Build](#build)
-- [Usage Examples](#usage-examples)
+- [Installation from Source](#installation-from-source-)
+- [Run Locally](#run-locally-)
+- [Build](#build-)
+- [Usage Examples](#usage-examples-)
   - [Vanilla Mode](#vanilla-mode)
   - [Read Input from Stdin](#read-input-from-stdin)
   - [Use System Prompts](#use-system-prompts)
-- [Technologies Used](#technologies-used)
-- [Contribution Guidelines](#contribution-guidelines)
-- [License](#license)
-- [Contact](#contact)
+- [Technologies Used](#technologies-used-)
+- [Contribution Guidelines](#contribution-guidelines-)
+- [License](#license-)
+- [Contact](#contact-)
 
 ## Tools 🛠️
 
