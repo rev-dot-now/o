@@ -43,12 +43,17 @@ These tools may sound basic, but they are the foundation of **o**'s unique capab
 
 Getting started with **o** is a breeze! Just clone the repository and install Bun, and you’re ready to dive into the world of meta-programming and content generation like never before.
 
+- Install Bun:
+  [Documentation](https://bun.sh/docs/installation)
 - Clone the repository:
   ```bash
   git clone https://github.com/rev-dot-now/o.git
   ```
-- Install Bun:
-  [Documentation](https://bun.sh/docs/installation)
+- Create a file called `.env.local`.
+- In `.env.local` add the following.
+  ```
+  OPENAI_API_KEY="[YOUR_API_KEY]"
+  ```
 
 ## Run Locally
 
