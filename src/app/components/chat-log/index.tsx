@@ -8,9 +8,9 @@ interface AiResponseProps {
 
 const ChatLog = ({ messages }: AiResponseProps) =>
 	messages.map(
-		({ role, content }) =>
+		({ id, role, content }) =>
 			role !== 'system' && (
-				<Text key={`${content.slice(0, 10)}`} color={getRoleColor(role)}>
+				<Text key={id} color={getRoleColor(role)}>
 					{content}
 				</Text>
 			),

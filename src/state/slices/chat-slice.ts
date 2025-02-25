@@ -1,20 +1,20 @@
 import type { BaseMessageLike } from '@langchain/core/messages'
 import { createSlice } from '@reduxjs/toolkit'
-import { defaultPrompt } from '~/prompts/system'
-
 import type { RootState } from '~/state/store'
-import createMessage from '~/utils/create-message'
+import getInitialMessages from '~/utils/get-initial-messages'
 
-export type Message = BaseMessageLike & { role: string; content: string }
+export type Message = BaseMessageLike & {
+	id: string
+	role: string
+	content: string
+}
 
 export type AppState = {
 	messages: Message[]
 }
 
 export const initialState: AppState = {
-	messages: [
-		createMessage('system', process.env.O_ROOT_PROMPT ?? defaultPrompt),
-	],
+	messages: await getInitialMessages(),
 }
 
 const chatSlice = createSlice({

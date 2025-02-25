@@ -1,48 +1,56 @@
-import type { MessageContent } from '@langchain/core/messages'
-import { createReactAgent } from '@langchain/langgraph/prebuilt'
-import { useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import ChatLog from '~/app/components/chat-log'
 import Input from '~/app/components/input'
 import agent from '~/app/components/main/initializers/agent'
 import { useAppDispatch } from '~/hooks/use-app-dispatch'
 import { useAppSelector } from '~/hooks/use-app-selector'
-
 import {
 	type Message,
 	addMessage,
 	selectMessages,
 } from '~/state/slices/chat-slice'
 import createMessage from '~/utils/create-message'
+import getArgs from '~/utils/get-args'
 
 const Chat = () => {
+	const { positionals } = getArgs()
 	const [userMessageContent, setUserMessageContent] = useState('')
 	const messages = useAppSelector(selectMessages)
 	const dispatch = useAppDispatch()
+	const inputPhrase = positionals.join(' ')
 
-	const onSubmit = async (currentUserMessageContent: string) => {
-		const userMessage: Message = createMessage(
-			'user',
-			currentUserMessageContent,
-		)
-		dispatch(addMessage(userMessage))
-		// Clear the user message
-		setUserMessageContent('')
-
-		const response = await agent.invoke(
-			{ messages: [...messages, userMessage] },
-			{ configurable: { thread_id: 0x42 } },
-		)
-
-		const lastResponseMessageContent = response.messages.at(-1)?.content
-
-		if (lastResponseMessageContent) {
-			const assistantMessage: Message = createMessage(
-				'assistant',
-				lastResponseMessageContent as string,
+	const onSubmit = useCallback(
+		async (currentUserMessageContent: string) => {
+			const userMessage: Message = createMessage(
+				'user',
+				currentUserMessageContent,
 			)
-			dispatch(addMessage(assistantMessage))
+			dispatch(addMessage(userMessage))
+			setUserMessageContent('')
+
+			const response = await agent.invoke(
+				{ messages: [...messages, userMessage] },
+				{ configurable: { thread_id: 0x42 } },
+			)
+
+			const lastResponseMessageContent = response.messages.at(-1)?.content
+
+			if (lastResponseMessageContent) {
+				const assistantMessage: Message = createMessage(
+					'assistant',
+					lastResponseMessageContent as string,
+				)
+				dispatch(addMessage(assistantMessage))
+			}
+		},
+		[dispatch, messages],
+	)
+
+	useEffect(() => {
+		if (inputPhrase.length > 0) {
+			onSubmit(inputPhrase)
 		}
-	}
+	}, [inputPhrase])
 
 	return (
 		<>

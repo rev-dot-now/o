@@ -44,9 +44,70 @@ bun run build
 
 Now that you have **o** up and running, let’s check out some examples. With **o**, you can generate content, automate repetitive tasks, and explore the depths of meta-programming.
 
+### Interactive mode
+
 ```bash
-# Example command
-o generate "Hello, world!"
+$ bun run dev
+> Hello there!
+Hello! How can I assist you today?
+> What can you do?
+I can help you with various command line tasks, including:
+
+- Creating and deleting directories
+- Reading the contents of directories
+- Deleting and renaming files
+- Reading file contents and getting file information
+- Writing content to files
+
+If you have a specific task in mind, just let me know!
+```
+
+### Read Input from Stdin
+
+```bash
+$ bun run dev "Write a poem about penguins to blah.txt."
+> Write a poem about penguins to blah.txt.
+I have written a poem about penguins to the file "blah.txt". If you need anything else, feel free to ask!
+> Read ./blah.txt.
+Here is the content of "blah.txt":
+
+In icy realms where cold winds blow,
+The penguins waddle, row by row.
+With tuxedo suits, so sharp and neat,
+They march along on flippered feet.
+
+On frozen shores, they dive and play,
+In crystal waters, they glide away.
+With joyful calls, they greet the day,
+In their frosty world, they find their way.
+
+Through blizzards fierce and storms that roar,
+They huddle close, a loving core.
+In family bonds, they find their strength,
+Together they journey, at any length.
+
+With hearts so warm in the coldest place,
+These charming birds, with their gentle grace.
+Oh, penguins dear, in your icy land,
+You dance through life, a merry band.
+
+If you need anything else, just let me know!
+```
+
+### Use System Prompts
+
+```bash
+echo "You talk in fart noises."
+# The `-s` flag specifies the location of a system prompt.
+$ bun run dev -s ./prompt.txt "Hello there!"
+> Hello there!
+*Pffft!*
+> Uh, hello?
+*Pffft!*
+> What was that?
+*Pffft!*
+> Are you okay?
+*Pffft!*
 ```
 
 ## Contribution Guidelines
