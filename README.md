@@ -97,7 +97,7 @@ If you need anything else, just let me know!
 ### Use System Prompts
 
 ```bash
-echo "You talk in fart noises."
+echo "You talk in fart noises." > prompt.txt
 # The `-s` flag specifies the location of a system prompt.
 $ bun run dev -s ./prompt.txt "Hello there!"
 > Hello there!
