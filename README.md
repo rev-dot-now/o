@@ -1,3 +1,5 @@
+![image](https://github.com/user-attachments/assets/20cbd02a-47be-4dc2-b3e9-ab89f83bff88)
+
 # **o** 🌀 - Your AI-Powered CLI Companion!
 
 Welcome to **o**—your self-referential CLI tool that’s here to revolutionize the way you think about programming and content generation! 🚀✨ Short for "ouroboros" 🐍, **o** is not just a tool; it's your new best friend in the world of meta-programming with AI. Whether you're a seasoned developer or just starting out, **o** makes coding feel like a breeze! 🌬️💻
