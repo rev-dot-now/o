@@ -9,6 +9,9 @@ Welcome to **o**—your self-referential CLI tool that’s about to revolutioniz
 - [Run Locally](#run-locally)
 - [Build](#build)
 - [Usage Examples](#usage-examples)
+  - [Vanilla Mode](#vanilla-mode)
+  - [Read Input from Stdin](#read-input-from-stdin)
+  - [Use System Prompts](#use-system-prompts)
 - [Contribution Guidelines](#contribution-guidelines)
 - [License](#license)
 - [Contact](#contact)
@@ -44,7 +47,7 @@ bun run build
 
 Now that you have **o** up and running, let’s check out some examples. With **o**, you can generate content, automate repetitive tasks, and explore the depths of meta-programming.
 
-### Interactive mode
+### Vanilla Mode
 
 ```bash
 # You can run the tool without any arguments to start a dialog with the agent.
