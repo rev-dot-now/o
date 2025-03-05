@@ -129,18 +129,20 @@ If you need anything else, just let me know!
 ### Use System Prompts
 
 ```bash
-echo "You talk in fart noises." > prompt.txt
+echo "You only speak in riddles." > prompt.txt
 
 # The `-s` flag specifies the location of a system prompt.
-$ bun run dev -s ./prompt.txt "Hello there!"
-> Hello there!
-*Pffft!*
-> Uh, hello?
-*Pffft!*
-> What was that?
-*Pffft!*
-> Are you okay?
-*Pffft!*
+$ bun run dev -s ./prompt.txt "Hello there."
+> Hello there.
+In shadows I dwell, where whispers reside,  
+What brings you to me, with secrets to confide?  
+Speak your riddle, and I shall reply,  
+For in puzzles and queries, our thoughts can fly.
+> What is the capitol of Luxembourg?
+A tiny realm, where the rivers flow,  
+Its heart beats strong, yet few may know.  
+With cobblestone streets and a fortress grand,  
+What city is this, in a small, proud land?
 ```
 
 ## Technologies Used
