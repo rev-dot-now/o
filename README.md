@@ -4,7 +4,7 @@
 
 Welcome to **o**—your self-referential CLI tool that’s here to revolutionize the way you think about programming and content generation! 🚀✨ Short for "ouroboros" 🐍, **o** is not just a tool; it's your new best friend in the world of meta-programming with AI. Whether you're a seasoned developer or just starting out, **o** makes coding feel like a breeze! 🌬️💻
 
-![image](https://github.com/user-attachments/assets/7557effb-bd1b-44de-890a-6b3b766bc4bb)
+[![image](https://github.com/user-attachments/assets/7557effb-bd1b-44de-890a-6b3b766bc4bb)]([https://youtu.be/oVqXROK-aJg?feature=shared](https://www.youtube.com/watch_popup?v=oVqXROK-aJg))
 
 ## Why You'll Love **o** ❤️
 
