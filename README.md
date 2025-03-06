@@ -10,6 +10,8 @@ Welcome to **o**—your self-referential CLI tool that’s here to revolutionize
 - **Cross-Platform**: Built with the latest tech stack, **o** runs smoothly on any platform. No more compatibility headaches! 🛠️
 - **Community Driven**: Join a growing community of innovators and creators. Your ideas can shape the future of **o**!
 
+Where **o** really shines is in completely automated tasks from natural language prompts, including self-generating its own features. This capability allows users to interact with **o** in a more intuitive way, making it a powerful tool for both simple and complex tasks.
+
 ## Table of Contents
 
 - [Tools](tools)
