@@ -260,3 +260,4 @@ We welcome contributions! If you have ideas, suggestions, or improvements, pleas
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details. We’re excited to share **o** with the world!
+- **command-exec**: Execute a command in the CLI and retrieve the results. This tool allows you to run any command as if you were typing it directly into the terminal, making it a powerful feature for automating tasks and integrating with other command-line utilities.
