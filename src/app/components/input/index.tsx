@@ -1,4 +1,6 @@
-import { type Key, Text, useInput } from 'ink'
+import { Box, type Key, Text, useInput } from 'ink'
+import Cursor from '~/app/components/cursor'
+import getRoleColor from '~/utils/get-role-color'
 
 type InputProps = {
 	onChange: (_: string) => void
@@ -23,7 +25,15 @@ const Input = ({ value, onChange, onSubmit, onInput }: InputProps) => {
 		}
 	})
 
-	return <Text>{value}</Text>
+	return (
+		<Box>
+			<Text color={getRoleColor('user')}>{'> '}</Text>
+			<Text>
+				{value}
+				<Cursor color='white' />
+			</Text>
+		</Box>
+	)
 }
 
 export default Input

@@ -30,7 +30,6 @@ Where **o** really shines is in completely automated tasks from natural language
 - [LLM Model Agnostic](#llm-model-agnostic)
 - [Contribution Guidelines](#contribution-guidelines)
 - [License](#license)
-- [Contact](#contact)
 
 ## Tools
 
@@ -250,7 +249,7 @@ This modular approach allows you to:
 
 To get started with a different model, simply configure the corresponding API and adjust your environment settings. **o** takes care of the rest!
 
-> Note: A [bug](https://github.com/deepseek-ai/DeepSeek-V3/issues/15#issuecomment-2696335105)
+> Note: A [bug](https://github.com/deepseek-ai/DeepSeek-V3/issues/15)
 > has been reported in DeepSeek's model that can sometimes put tool calls into an
 > infinite loop. Be aware if using **o** with DeepSeek.
 
