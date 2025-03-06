@@ -36,6 +36,7 @@ Where **o** really shines is in completely automated tasks from natural language
 
 The **o** architecture has several tools available for basic file-system operations, all powered by the latest in AI technology. Here’s what you can do:
 
+- **command-exec**: Execute a command in the CLI and retrieve the results. This tool allows you to run any command as if you were typing it directly into the terminal, making it a powerful feature for automating tasks and integrating with other command-line utilities.
 - **dir-create**: Create a directory.
 - **dir-delete**: Delete a directory.
 - **dir-read**: Read the contents of a directory.
@@ -260,4 +261,3 @@ We welcome contributions! If you have ideas, suggestions, or improvements, pleas
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details. We’re excited to share **o** with the world!
-- **command-exec**: Execute a command in the CLI and retrieve the results. This tool allows you to run any command as if you were typing it directly into the terminal, making it a powerful feature for automating tasks and integrating with other command-line utilities.
