@@ -6,27 +6,31 @@ import getArgs from '~/utils/get-args'
 
 const args = getArgs()
 
+/**
+ * Retrieves the initial messages for the chat.
+ * @returns {Promise<Message[]>} A promise that resolves to an array of initial messages.
+ */
 const getInitialMessages = async () => {
-	const messages: Message[] = []
-	const {
-		values: { system, interactive },
-		positionals,
-	} = args
+    const messages: Message[] = []
+    const {
+        values: { system, interactive },
+        positionals,
+    } = args
 
-	if (system) {
-		for await (const fileName of system) {
-			const content = await readFile(fileName, 'utf-8')
-			messages.push(createMessage('system', content))
-		}
-	} else {
-		messages.push(createMessage('system', defaultPrompt))
-	}
+    if (system) {
+        for await (const fileName of system) {
+            const content = await readFile(fileName, 'utf-8')
+            messages.push(createMessage('system', content))
+        }
+    } else {
+        messages.push(createMessage('system', defaultPrompt))
+    }
 
-	if (!interactive) {
-		messages.push(createMessage('user', positionals.join(' ')))
-	}
+    if (!interactive) {
+        messages.push(createMessage('user', positionals.join(' ')))
+    }
 
-	return messages
+    return messages
 }
 
 export default getInitialMessages
