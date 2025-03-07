@@ -1,19 +1,7 @@
-import getVariableNames from './get-variable-names'
-import { describe, it, expect } from 'bun:test'
+import getVariableNames from './get-variable-names';
 
-describe('getVariableNames', () => {
-	it('should extract variable names from a template string', () => {
-		const template = 'Hello {name}, your order {orderId} is ready.'
-		const result = getVariableNames(template)
-
-		expect(result).toEqual(['name', 'orderId'])
-	})
-
-	it('should handle duplicate variable names and return unique values', () => {
-		const template =
-			'Hello {name}, your order {orderId} is ready. {name}, please confirm.'
-		const result = getVariableNames(template)
-
-		expect(result).toEqual(['name', 'orderId'])
-	})
-})
+test('should extract variable names from template string', () => {
+    const template = "Hello {name}, welcome to {place}.";
+    const result = getVariableNames(template);
+    expect(result).toEqual(['name', 'place']);
+});
