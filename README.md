@@ -2,17 +2,28 @@
 
 # **o** 🌀 - Your AI-Powered CLI Companion
 
-Welcome to **o**—your self-referential CLI tool that’s here to revolutionize the way you think about programming and content generation! 🚀✨ Short for "ouroboros" 🐍, **o** is not just a tool; it's your new best friend in the world of meta-programming with AI. Whether you're a seasoned developer or just starting out, **o** makes coding feel like a breeze! 🌬️💻
+Welcome to **o**—your self-referential CLI tool that’s here to revolutionize the
+way you think about programming and content generation! 🚀✨ Short for
+"ouroboros" 🐍, **o** is not just a tool; it's your new best friend in the world
+of meta-programming with AI. Whether you're a seasoned developer or just
+starting out, **o** makes coding feel like a breeze! 🌬️💻
 
-[Watch the video demonstration!](https://www.youtube.com/watch_popup?v=oVqXROK-aJg&autoplay=true)
+[Watch the video
+demonstration!](https://www.youtube.com/watch_popup?v=oVqXROK-aJg&autoplay=true)
 
 ## Why You'll Love **o** ❤️
 
-- **AI Magic**: Harness the power of AI with tools that understand your needs and adapt to your workflow.
-- **Cross-Platform**: Built with the latest tech stack, **o** runs smoothly on any platform. No more compatibility headaches! 🛠️
-- **Community Driven**: Join a growing community of innovators and creators. Your ideas can shape the future of **o**!
+- **AI Magic**: Harness the power of AI with tools that understand your needs
+  and adapt to your workflow.
+- **Cross-Platform**: Built with the latest tech stack, **o** runs smoothly on
+  any platform. No more compatibility headaches! 🛠️
+- **Community Driven**: Join a growing community of innovators and creators.
+  Your ideas can shape the future of **o**!
 
-Where **o** really shines is in completely automated tasks from natural language prompts, including self-generating its own features. This capability allows users to interact with **o** in a more intuitive way, making it a powerful tool for both simple and complex tasks.
+Where **o** really shines is in completely automated tasks from natural language
+prompts, including self-generating its own features. This capability allows
+users to interact with **o** in a more intuitive way, making it a powerful tool
+for both simple and complex tasks.
 
 ## Table of Contents
 
@@ -22,7 +33,8 @@ Where **o** really shines is in completely automated tasks from natural language
 - [Build](#build)
 - [Usage Examples](#usage-examples)
   - [Interactive Mode](#interactive-mode)
-  - [Interactive Mode with System Prompts](#interactive-mode-with-system-prompts)
+  - [Interactive Mode with System
+    Prompts](#interactive-mode-with-system-prompts)
   - [One-Shot Mode](#one-shot-mode)
   - [One-Shot Mode with System Prompts](#one-shot-mode-with-system-prompts)
 - [Summary of Flags](#summary-of-flags)
@@ -33,9 +45,13 @@ Where **o** really shines is in completely automated tasks from natural language
 
 ## Tools
 
-The **o** architecture has several tools available for basic file-system operations, all powered by the latest in AI technology. Here’s what you can do:
+The **o** architecture has several tools available for basic file-system
+operations, all powered by the latest in AI technology. Here’s what you can do:
 
-- **command-exec**: Execute a command in the CLI and retrieve the results. This tool allows you to run any command as if you were typing it directly into the terminal, making it a powerful feature for automating tasks and integrating with other command-line utilities.
+- **command-exec**: Execute a command in the CLI and retrieve the results. This
+  tool allows you to run any command as if you were typing it directly into the
+  terminal, making it a powerful feature for automating tasks and integrating
+  with other command-line utilities.
 - **dir-create**: Create a directory.
 - **dir-delete**: Delete a directory.
 - **dir-read**: Read the contents of a directory.
@@ -45,14 +61,18 @@ The **o** architecture has several tools available for basic file-system operati
 - **file-rename**: Rename a file.
 - **file-write**: Write to a file.
 
-These tools may sound basic, but they are the foundation of **o**'s unique capabilities. You can easily ask **o** to create new tools from scratch! During development, only two tools—`file-read` and `file-write`—were initially created. All other tools were generated within **o**'s self-hosted environment. 🌱
+These tools may sound basic, but they are the foundation of **o**'s unique
+capabilities. You can easily ask **o** to create new tools from scratch! During
+development, only two tools—`file-read` and `file-write`—were initially created.
+All other tools were generated within **o**'s self-hosted environment. 🌱
 
 ## Installation from Source
 
-Getting started with **o** is a breeze! Just clone the repository and install Bun, and you’re ready to dive into the world of meta-programming and content generation like never before.
+Getting started with **o** is a breeze! Just clone the repository and install
+Bun, and you’re ready to dive into the world of meta-programming and content
+generation like never before.
 
-- Install Bun:
-  [Documentation](https://bun.sh/docs/installation)
+- Install Bun: [Documentation](https://bun.sh/docs/installation)
 - Clone the repository:
 
   ```bash
@@ -75,7 +95,9 @@ Getting started with **o** is a breeze! Just clone the repository and install Bu
 
 ## Run Locally
 
-Ready to see **o** in action? Running it locally is straightforward. Fire up your terminal and run the command below. You’ll be generating content and automating tasks in no time!
+Ready to see **o** in action? Running it locally is straightforward. Fire up
+your terminal and run the command below. You’ll be generating content and
+automating tasks in no time!
 
 ```bash
 # Usage:
@@ -84,9 +106,14 @@ bun run dev [flags] "optional user prompt"
 
 ## Build
 
-Want to take it a step further? Building the **o** command is your next move. This will create the `o` command in the `dist/` folder at the root of the project. Once built, you can copy the produced binary and use it anywhere on your system.
+Want to take it a step further? Building the **o** command is your next move.
+This will create the `o` command in the `dist/` folder at the root of the
+project. Once built, you can copy the produced binary and use it anywhere on
+your system.
 
-**Note**: To use **o** anywhere on your system, simply ensure that you have an `.env.local` file with your `OPENAI_API_KEY` in the same execution path as **o**.
+**Note**: To use **o** anywhere on your system, simply ensure that you have an
+`.env.local` file with your `OPENAI_API_KEY` in the same execution path as
+**o**.
 
 ```bash
 bun run build
@@ -94,12 +121,18 @@ bun run build
 
 ## Usage Examples
 
-With **o** successfully set up, let's explore some practical examples of its capabilities. **o** operates in two modes:
+With **o** successfully set up, let's explore some practical examples of its
+capabilities. **o** operates in two modes:
 
-- **Interactive Mode** (`-i`): Engage in a conversational, back-and-forth chat with **o**, where the agent responds to each input until you decide to end the session.
-- **One-Shot Mode** (default): Execute a single request directly from the command line and receive an immediate response without entering a persistent session.
+- **Interactive Mode** (`-i`): Engage in a conversational, back-and-forth chat
+  with **o**, where the agent responds to each input until you decide to end the
+  session.
+- **One-Shot Mode** (default): Execute a single request directly from the
+  command line and receive an immediate response without entering a persistent
+  session.
 
-Both modes offer flexible ways to generate content, automate tasks, and explore meta-programming workflows.
+Both modes offer flexible ways to generate content, automate tasks, and explore
+meta-programming workflows.
 
 ---
 
@@ -127,7 +160,8 @@ If you have a specific task in mind, just let me know, and I'll be happy to assi
 
 ### Interactive Mode with System Prompts
 
-You can customize **o**'s personality and behavior by providing a system prompt using the `-s` flag.
+You can customize **o**'s personality and behavior by providing a system prompt
+using the `-s` flag.
 
 ```bash
 # Create a local system prompt file.
@@ -230,7 +264,8 @@ FizzBuzz
 
 **o** is built on a powerful tech stack that includes:
 
-- **Ink**: A library for building interactive command-line applications, enhancing the user experience.
+- **Ink**: A library for building interactive command-line applications,
+  enhancing the user experience.
 - **React**: For building user interfaces.
 - **LangChain**: To leverage advanced AI capabilities.
 - **Redux Toolkit**: For state management.
@@ -239,24 +274,34 @@ FizzBuzz
 
 ## LLM Model Agnostic
 
-While **o** uses the OpenAI library by default, it is designed to be **LLM model agnostic**. This means that you can easily switch between different language models to suit your needs. Whether you're working with OpenAI, Anthropic, Gemini, DeepSeek, or any other model, **o** gives you the flexibility to integrate with them seamlessly.
+While **o** uses the OpenAI library by default, it is designed to be **LLM model
+agnostic**. This means that you can easily switch between different language
+models to suit your needs. Whether you're working with OpenAI, Anthropic,
+Gemini, DeepSeek, or any other model, **o** gives you the flexibility to
+integrate with them seamlessly.
 
 This modular approach allows you to:
 
 - **Switch Models**: Use different LLMs based on the task at hand.
-- **Leverage Best-in-Class AI**: Choose the best performing model for your specific use case, whether it's for content generation, code completion, or advanced analytics.
-- **Stay Future-Proof**: As new models emerge, you can quickly swap them into the **o** environment without any hassle.
+- **Leverage Best-in-Class AI**: Choose the best performing model for your
+  specific use case, whether it's for content generation, code completion, or
+  advanced analytics.
+- **Stay Future-Proof**: As new models emerge, you can quickly swap them into
+  the **o** environment without any hassle.
 
-To get started with a different model, simply configure the corresponding API and adjust your environment settings. **o** takes care of the rest!
+To get started with a different model, simply configure the corresponding API
+and adjust your environment settings. **o** takes care of the rest!
 
-> Note: A [bug](https://github.com/deepseek-ai/DeepSeek-V3/issues/15)
-> has been reported in DeepSeek's model that can sometimes put tool calls into an
+> Note: A [bug](https://github.com/deepseek-ai/DeepSeek-V3/issues/15) has been
+> reported in DeepSeek's model that can sometimes put tool calls into an
 > infinite loop. Be aware if using **o** with DeepSeek.
 
 ## Contribution Guidelines
 
-We welcome contributions! If you have ideas, suggestions, or improvements, please feel free to contribute. Together, we can make **o** even better!
+We welcome contributions! If you have ideas, suggestions, or improvements,
+please feel free to contribute. Together, we can make **o** even better!
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details. We’re excited to share **o** with the world!
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
+for details. We’re excited to share **o** with the world!
