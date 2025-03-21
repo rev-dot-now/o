@@ -4,14 +4,14 @@ import type { Message } from '~/state/slices/chat-slice'
 import getRoleColor from '~/utils/get-role-color'
 
 interface AiResponseProps {
-    /**
-     * Indicates if the chat is currently loading.
-     */
-    isLoading: boolean
-    /**
-     * The array of messages to display.
-     */
-    messages: Message[]
+	/**
+	 * Indicates if the chat is currently loading.
+	 */
+	isLoading: boolean
+	/**
+	 * The array of messages to display.
+	 */
+	messages: Message[]
 }
 
 /**
@@ -20,22 +20,22 @@ interface AiResponseProps {
  * @returns {JSX.Element} The rendered chat log component.
  */
 const ChatLog = ({ isLoading, messages }: AiResponseProps) => (
-    <>
-        {messages.map(
-            ({ id, role, content }) =>
-                role !== 'system' && (
-                    <Text key={id} color={getRoleColor(role)}>
-                        {role === 'user' && '> '}
-                        {content}
-                    </Text>
-                ),
-        )}
-        {isLoading && (
-            <Text color={getRoleColor('assistant')}>
-                <Spinner />
-            </Text>
-        )}
-    </>
+	<>
+		{messages.map(
+			({ id, role, content }) =>
+				role !== 'system' && (
+					<Text key={id} color={getRoleColor(role)}>
+						{role === 'user' && '> '}
+						{content}
+					</Text>
+				),
+		)}
+		{isLoading && (
+			<Text color={getRoleColor('assistant')}>
+				<Spinner />
+			</Text>
+		)}
+	</>
 )
 
 export default ChatLog

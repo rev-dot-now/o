@@ -1,7 +1,9 @@
-import getInitialMessages from './get-initial-messages';
+import { describe, expect, it } from 'bun:test'
+import getInitialMessages from './get-initial-messages'
 
-
-test('should retrieve initial messages', async () => {
-    const messages = await getInitialMessages();
-    expect(Array.isArray(messages)).toBe(true);
-});
+describe('getInitialMessages', () => {
+	it('should retrieve initial messages', async () => {
+		const messages = await getInitialMessages()
+		expect(Array.isArray(messages)).toBe(true)
+	})
+})

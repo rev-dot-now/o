@@ -12,15 +12,15 @@ import fileWrite from './file-write'
  * Exporting all tools for file and directory operations.
  */
 const tools = [
-    commandExec,
-    dirCreate,
-    dirDelete,
-    dirRead,
-    fileDelete,
-    fileInfo,
-    fileRead,
-    fileRename,
-    fileWrite,
+	commandExec,
+	dirCreate,
+	dirDelete,
+	dirRead,
+	fileDelete,
+	fileInfo,
+	fileRead,
+	fileRename,
+	fileWrite,
 ]
 
 export default tools

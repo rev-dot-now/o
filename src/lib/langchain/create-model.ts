@@ -8,13 +8,13 @@ import { OPENAI_DEFAULT_MODEL, OPENAI_DEFAULT_TEMPERATURE } from './constants'
  * @returns {ChatOpenAI} The created ChatOpenAI model.
  */
 const createModel = (
-    model: string = OPENAI_DEFAULT_MODEL,
-    temperature: number = OPENAI_DEFAULT_TEMPERATURE,
+	model: string = OPENAI_DEFAULT_MODEL,
+	temperature: number = OPENAI_DEFAULT_TEMPERATURE,
 ) =>
-    new ChatOpenAI({
-        model,
-        temperature,
-        // verbose: true,
-    })
+	new ChatOpenAI({
+		model,
+		temperature,
+		// verbose: true,
+	})
 
 export default createModel

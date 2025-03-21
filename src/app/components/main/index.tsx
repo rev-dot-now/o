@@ -9,13 +9,13 @@ import store from '~/state/store'
  * @returns {JSX.Element} The rendered main component.
  */
 const Main = () => {
-    return (
-        <ErrorBoundary FallbackComponent={ConsoleError}>
-            <Provider store={store}>
-                <Chat />
-            </Provider>
-        </ErrorBoundary>
-    )
+	return (
+		<ErrorBoundary FallbackComponent={ConsoleError}>
+			<Provider store={store}>
+				<Chat />
+			</Provider>
+		</ErrorBoundary>
+	)
 }
 
 export default Main

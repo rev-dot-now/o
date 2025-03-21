@@ -5,9 +5,9 @@
  * @returns {{ id: string; role: string; content: string }} The created message object.
  */
 const createMessage = (role: string, content: string) => {
-    const id = `${role}-${performance.now()}`
+	const id = `${role}-${performance.now()}`
 
-    return { id, role, content }
+	return { id, role, content }
 }
 
 export default createMessage
