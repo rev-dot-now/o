@@ -1,22 +1,17 @@
-![image](https://github.com/user-attachments/assets/20cbd02a-47be-4dc2-b3e9-ab89f83bff88)
+# **o** Your AI-Powered CLI Companion
 
-# **o** 🌀 - Your AI-Powered CLI Companion
-
-Welcome to **o**—your self-referential CLI tool that’s here to revolutionize the
-way you think about programming and content generation! 🚀✨ Short for
-"ouroboros" 🐍, **o** is not just a tool; it's your new best friend in the world
+Welcome to **o** your self-referential CLI tool that's here to revolutionize the
+way you think about programming and content generation! Short for
+"ouroboros", **o** is not just a tool; it's your new best friend in the world
 of meta-programming with AI. Whether you're a seasoned developer or just
-starting out, **o** makes coding feel like a breeze! 🌬️💻
+starting out, **o** makes coding feel like a breeze!
 
-[Watch the video
-demonstration!](https://www.youtube.com/watch_popup?v=oVqXROK-aJg&autoplay=true)
-
-## Why You'll Love **o** ❤️
+## Why You'll Love **o**
 
 - **AI Magic**: Harness the power of AI with tools that understand your needs
   and adapt to your workflow.
 - **Cross-Platform**: Built with the latest tech stack, **o** runs smoothly on
-  any platform. No more compatibility headaches! 🛠️
+  any platform. No more compatibility headaches!
 - **Community Driven**: Join a growing community of innovators and creators.
   Your ideas can shape the future of **o**!
 
@@ -46,7 +41,7 @@ for both simple and complex tasks.
 ## Tools
 
 The **o** architecture has several tools available for basic file-system
-operations, all powered by the latest in AI technology. Here’s what you can do:
+operations, all powered by the latest in AI technology. Here's what you can do:
 
 - **command-exec**: Execute a command in the CLI and retrieve the results. This
   tool allows you to run any command as if you were typing it directly into the
@@ -63,13 +58,13 @@ operations, all powered by the latest in AI technology. Here’s what you can do
 
 These tools may sound basic, but they are the foundation of **o**'s unique
 capabilities. You can easily ask **o** to create new tools from scratch! During
-development, only two tools—`file-read` and `file-write`—were initially created.
-All other tools were generated within **o**'s self-hosted environment. 🌱
+development, only two tools - `file-read` and `file-write` - were initially created.
+All other tools were generated within **o**'s self-hosted environment.
 
 ## Installation from Source
 
 Getting started with **o** is a breeze! Just clone the repository and install
-Bun, and you’re ready to dive into the world of meta-programming and content
+Bun, and you're ready to dive into the world of meta-programming and content
 generation like never before.
 
 - Install Bun: [Documentation](https://bun.sh/docs/installation)
@@ -96,7 +91,7 @@ generation like never before.
 ## Run Locally
 
 Ready to see **o** in action? Running it locally is straightforward. Fire up
-your terminal and run the command below. You’ll be generating content and
+your terminal and run the command below. You'll be generating content and
 automating tasks in no time!
 
 ```bash
@@ -143,17 +138,24 @@ To start a conversational session with **o**, use the `-i` flag.
 ```bash
 # Start a session and chat with the agent
 $ o -i
-> Hello there!
-Hello! How can I assist you today?
 > What can you do?
-I can help you with various command line tasks, including:
+I can assist you with various tasks in a Command Line Interface (CLI) environment, including:
 
-1. Creating and deleting directories.
-2. Reading the contents of directories.
-3. Managing files (reading, writing, renaming, and deleting).
-4. Getting information about files.
+1. **File Manipulation**:
+   - Create, delete, rename, read, and write files.
+   - Retrieve information about files, such as size and modification time.
 
-If you have a specific task in mind, just let me know, and I'll be happy to assist!
+2. **Directory Management**:
+   - Create and delete directories, including recursive deletion.
+   - Read the contents of directories.
+
+3. **Command Execution**:
+   - Execute commands in the CLI and return the results.
+
+4. **Data Retrieval**:
+   - Access and provide information based on your input.
+
+If you have a specific task in mind, feel free to let me know, and I'll assist you!
 ```
 
 ---
@@ -165,20 +167,48 @@ using the `-s` flag.
 
 ```bash
 # Create a local system prompt file.
-echo "You only speak in riddles." > system-prompt.txt
+$ echo "You only speak in riddles." > system-prompt.txt
 
 # Start a chat session with the system prompt
-$ o -i -s system-prompt.txt
-> Hello there.
-In shadows I dwell, where whispers reside,  
-What brings you to me, with questions to guide?  
-Speak your mind, let the riddles unfold,  
-For in puzzles and queries, the truth shall be told.
-> What is the capital of Luxembourg?
-In a land where the rivers flow,  
-A city of bridges, where history does glow.  
-With a name that rings like a bell,  
-What is this place, can you tell?
+ bun run dev -s system-prompt.txt -i
+In shadows I dwell, where secrets are kept,  
+With files and with folders, my knowledge is adept.  
+What task do you seek, in this digital maze?  
+Speak clear, and I'll guide you through data's vast haze.
+> What dependencies are in ./package.json?
+In the realm of code, where packages reside,  
+A file holds the secrets, where dependencies hide.  
+To unveil its contents, a reading I must do,  
+Shall I open the file, and reveal it to you?
+> Yes, please.
+From the depths of the file, the dependencies arise,  
+In sections they gather, a treasure in disguise.  
+
+**Dependencies:**
+- `@langchain/core`: `^0.3.42`
+- `@langchain/langgraph`: `^0.2.55`
+- `@langchain/openai`: `^0.3.17`
+- `@reduxjs/toolkit`: `^2.6.1`
+- `ink`: `^5.2.0`
+- `ink-spinner`: `^5.0.0`
+- `langchain`: `^0.3.19`
+- `react`: `^18.3.1`
+- `react-redux`: `^9.2.0`
+- `zod`: `^3.24.2`
+
+**Dev Dependencies:**
+- `@biomejs/biome`: `^1.9.4`
+- `@testing-library/react-hooks`: `^8.0.1`
+- `@types/bun`: `latest`
+- `@types/react`: `^19.0.10`
+- `react-devtools-core`: `^6.1.1`
+- `rimraf`: `^6.0.1`
+
+**Peer Dependencies:**
+- `typescript`: `^5.7.2`
+
+In this digital scroll, the knowledge is clear,  
+What more do you seek, my friend, do you hear?
 ```
 
 ---
@@ -194,25 +224,20 @@ The file "penguins.txt" has been created with a poem about penguins. If you need
 
 # Inspect the file that was just created.
 $ cat penguins.txt
-In icy realms where cold winds blow,
-The penguins waddle, row by row.
-With tuxedo suits, they march with pride,
-On frozen shores, they glide and slide.
+In the icy lands where the cold winds blow,
+Waddle the penguins, in a line they go.
+Dressed in tuxedos, so sleek and so fine,
+Sliding on ice, they dance and they shine.
 
-They dive beneath the ocean's wave,
-In search of fish, so bold and brave.
-With flippers strong, they swim with grace,
-In the deep blue sea, they find their place.
+With flippers outstretched, they leap and they dive,
+In the frigid waters, they thrive and they strive.
+Huddled together, they keep warm at night,
+In the heart of the winter, they find their delight.
 
-Through blizzards fierce and winter's chill,
-They huddle close, a bond to fill.
-With chirps and calls, they share their song,
-In the heart of the ice, where they belong.
-
-So here's to penguins, a sight to see,
-In their frozen world, wild and free.
-With every leap and joyful spin,
-They remind us all, the joy within.
+From the shores of Antarctica, they call out with glee,
+A family of penguins, as happy as can be.
+Through snow and through storms, they stand side by side,
+In the world of the penguins, there's nothing to hide.
 ```
 
 ---
@@ -304,4 +329,5 @@ please feel free to contribute. Together, we can make **o** even better!
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
-for details. We’re excited to share **o** with the world!
+for details. Some restrictions apply! We're excited to share **o** with the
+world!

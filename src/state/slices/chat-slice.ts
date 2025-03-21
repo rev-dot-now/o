@@ -1,7 +1,7 @@
 import type { BaseMessageLike } from '@langchain/core/messages'
-import { createSlice } from '@reduxjs/toolkit'
+import { type PayloadAction, createSlice } from '@reduxjs/toolkit'
 import type { RootState } from '~/state/store'
-import getInitialMessages from '~/utils/get-initial-messages'
+import getInitialState from '~/utils/get-initial-state'
 
 export type Message = BaseMessageLike & {
 	id: string
@@ -10,15 +10,17 @@ export type Message = BaseMessageLike & {
 }
 
 export type AppState = {
+	userMessageContent: string
 	messages: Message[]
+	isLoading: boolean
+	hasInvoked: boolean
 }
 
 /**
  * Initial state for the chat slice, loading initial messages.
+ * This state is retrieved asynchronously from the getInitialState function.
  */
-export const initialState: AppState = {
-	messages: await getInitialMessages(),
-}
+export const initialState: AppState = await getInitialState()
 
 const chatSlice = createSlice({
 	name: 'chat',
@@ -29,8 +31,17 @@ const chatSlice = createSlice({
 		 * @param {AppState} state - The current state.
 		 * @param {Message} action - The message to add.
 		 */
-		addMessage: (state, action) => {
+		addMessage: (state, action: PayloadAction<Message>) => {
 			state.messages.push(action.payload)
+		},
+		setUserMessageContent: (state, action: PayloadAction<string>) => {
+			state.userMessageContent = action.payload
+		},
+		setIsLoading: (state, action: PayloadAction<boolean>) => {
+			state.isLoading = action.payload
+		},
+		setHasInvoked: (state, action: PayloadAction<boolean>) => {
+			state.hasInvoked = action.payload
 		},
 	},
 })
@@ -53,6 +64,20 @@ export const selectMessages = (state: RootState) =>
 export const selectLastMessage = (state: RootState) =>
 	selectMessages(state).at(-1)
 
-export const { addMessage } = chatSlice.actions
+export const selectIsLoading = (state: RootState) =>
+	selectChatSlice(state).isLoading
+
+export const selectUserMessageContent = (state: RootState) =>
+	selectChatSlice(state).userMessageContent
+
+export const selectHasInvoked = (state: RootState) =>
+	selectChatSlice(state).hasInvoked
+
+export const {
+	addMessage,
+	setUserMessageContent,
+	setIsLoading,
+	setHasInvoked,
+} = chatSlice.actions
 
 export default chatSlice.reducer

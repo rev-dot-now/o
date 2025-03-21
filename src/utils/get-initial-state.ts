@@ -3,7 +3,7 @@ import {
 	defaultPrompt,
 	templateInstructions,
 } from '~/prompts/system'
-import type { Message } from '~/state/slices/chat-slice'
+import type { AppState } from '~/state/slices/chat-slice'
 import createMessage from '~/utils/create-message'
 import getArgs from '~/utils/get-args'
 import getVariableNames from '~/utils/get-variable-names'
@@ -16,20 +16,27 @@ const args = getArgs()
  * Retrieves the initial messages for the chat.
  * @returns {Promise<Message[]>} A promise that resolves to an array of initial messages.
  */
-const getInitialMessages = async () => {
-	const messages: Message[] = []
+const getInitialState = async () => {
+	const initialState: AppState = {
+		userMessageContent: '',
+		messages: [],
+		isLoading: false,
+		hasInvoked: false,
+	}
 	const {
-		values: { system, interactive },
+		values: { system },
 		positionals,
 	} = args
 
+	// If the CLI invocation has the `system` flag...
 	if (system) {
 		for await (const fileName of system) {
 			const file = Bun.file(fileName)
 			const content = await file.text()
 
+			// If the system prompt template has variables...
 			if (hasVariables(content)) {
-				messages.push(
+				initialState.messages.push(
 					createMessage(
 						'system',
 						interpolate(defaultPrompt, {
@@ -40,8 +47,9 @@ const getInitialMessages = async () => {
 						}),
 					),
 				)
+				// Otherwise the system prompt template does NOT have variables...
 			} else {
-				messages.push(
+				initialState.messages.push(
 					createMessage(
 						'system',
 						interpolate(defaultPrompt, {
@@ -51,8 +59,9 @@ const getInitialMessages = async () => {
 				)
 			}
 		}
+		// If the CLI invecation does NOT have the `system` flag...
 	} else {
-		messages.push(
+		initialState.messages.push(
 			createMessage(
 				'system',
 				interpolate(defaultPrompt, {
@@ -62,11 +71,12 @@ const getInitialMessages = async () => {
 		)
 	}
 
-	if (!interactive) {
-		messages.push(createMessage('user', positionals.join(' ')))
+	// If there is an incoming user message at CLI invocation...
+	if (positionals.length > 0) {
+		initialState.messages.push(createMessage('user', positionals.join(' ')))
 	}
 
-	return messages
+	return initialState
 }
 
-export default getInitialMessages
+export default getInitialState

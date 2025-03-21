@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect } from 'react'
 import ChatLog from '~/app/components/chat-log'
 import Input from '~/app/components/input'
 import agent from '~/app/components/main/initializers/agent'
@@ -7,10 +7,19 @@ import { useAppSelector } from '~/hooks/use-app-selector'
 import {
 	type Message,
 	addMessage,
+	selectHasInvoked,
+	selectIsLoading,
 	selectMessages,
+	selectUserMessageContent,
+	setHasInvoked,
+	setIsLoading,
+	setUserMessageContent,
 } from '~/state/slices/chat-slice'
+import store from '~/state/store'
 import createMessage from '~/utils/create-message'
 import getArgs from '~/utils/get-args'
+
+const THREAD_ID = 0x7e2
 
 /**
  * Chat component that manages user input and displays chat messages.
@@ -19,40 +28,36 @@ import getArgs from '~/utils/get-args'
 const Chat = () => {
 	const {
 		values: { interactive },
-		positionals,
 	} = getArgs()
-	const [userMessageContent, setUserMessageContent] = useState(
-		interactive ? positionals.join(' ') : '',
-	)
-	const [isLoading, setIsLoading] = useState(false)
 	const messages = useAppSelector(selectMessages)
+	const userMessageContent = useAppSelector(selectUserMessageContent)
+	const isLoading = useAppSelector(selectIsLoading)
 	const dispatch = useAppDispatch()
 
-	/**
-	 * Handles the submission of the user message.
-	 * @param {string} currentUserMessageContent - The content of the user's
-	 * message.
-	 * @returns {Promise<void>} A promise that resolves when the message has been
-	 * processed.
-	 */
+	const onChange = useCallback(
+		(currentUserMessageContent: string) =>
+			dispatch(setUserMessageContent(currentUserMessageContent)),
+		[dispatch],
+	)
+
 	const onSubmit = useCallback(
 		async (currentUserMessageContent: string) => {
-			setIsLoading(true)
+			dispatch(setIsLoading(true))
 
-			const userMessage: Message = createMessage(
-				'user',
-				currentUserMessageContent,
-			)
-			if (interactive) dispatch(addMessage(userMessage))
-			setUserMessageContent('')
+			const agentInvokeMessages = [...messages]
+
+			if (selectHasInvoked(store.getState())) {
+				const userMessage = createMessage('user', currentUserMessageContent)
+
+				agentInvokeMessages.push(userMessage)
+				dispatch(addMessage(userMessage))
+				dispatch(setUserMessageContent(''))
+			}
 
 			const response = await agent.invoke(
-				{ messages: [...messages, userMessage] },
-				{ configurable: { thread_id: 0x42 } },
+				{ messages: agentInvokeMessages },
+				{ configurable: { thread_id: THREAD_ID } },
 			)
-
-			setIsLoading(false)
-
 			const lastResponseMessageContent = response.messages.at(-1)?.content
 
 			if (lastResponseMessageContent) {
@@ -62,15 +67,16 @@ const Chat = () => {
 				)
 				dispatch(addMessage(assistantMessage))
 			}
+
+			dispatch(setHasInvoked(true))
+			dispatch(setIsLoading(false))
 		},
-		[dispatch, messages, interactive],
+		[dispatch],
 	)
 
 	useEffect(() => {
-		if (!interactive) {
-			onSubmit(userMessageContent)
-		}
-	}, [interactive, userMessageContent])
+		onSubmit()
+	}, [])
 
 	return (
 		<>
@@ -78,7 +84,7 @@ const Chat = () => {
 			{interactive && !isLoading && (
 				<Input
 					value={userMessageContent}
-					onChange={setUserMessageContent}
+					onChange={onChange}
 					onSubmit={onSubmit}
 				/>
 			)}
