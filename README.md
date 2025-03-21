@@ -1,10 +1,11 @@
-# **o** Your AI-Powered CLI Companion
+![image](https://github.com/user-attachments/assets/20cbd02a-47be-4dc2-b3e9-ab89f83bff88)
+
 
 Welcome to **o** your self-referential CLI tool that's here to revolutionize the
-way you think about programming and content generation! Short for
-"ouroboros", **o** is not just a tool; it's your new best friend in the world
-of meta-programming with AI. Whether you're a seasoned developer or just
-starting out, **o** makes coding feel like a breeze!
+way you think about programming and content generation! Short for "ouroboros",
+**o** is not just a tool; it's your new best friend in the world of
+meta-programming with AI. Whether you're a seasoned developer or just starting
+out, **o** makes coding feel like a breeze!
 
 ## Why You'll Love **o**
 
@@ -58,8 +59,8 @@ operations, all powered by the latest in AI technology. Here's what you can do:
 
 These tools may sound basic, but they are the foundation of **o**'s unique
 capabilities. You can easily ask **o** to create new tools from scratch! During
-development, only two tools - `file-read` and `file-write` - were initially created.
-All other tools were generated within **o**'s self-hosted environment.
+development, only two tools - `file-read` and `file-write` - were initially
+created. All other tools were generated within **o**'s self-hosted environment.
 
 ## Installation from Source
 
@@ -328,6 +329,6 @@ please feel free to contribute. Together, we can make **o** even better!
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
-for details. Some restrictions apply! We're excited to share **o** with the
+This project is licensed under a restricted MIT License - see the
+[LICENSE](LICENSE) file for details. We're excited to share **o** with the
 world!
