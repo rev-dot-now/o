@@ -8,12 +8,12 @@ describe('getInitialMessages', () => {
 	})
 
 	it('should handle empty input', async () => {
-		const initialState = await getInitialState();
-		expect(initialState.messages.length).toBe(0);
-	});
+		const initialState = await getInitialState()
+		expect(initialState.messages.length).toBe(0)
+	})
 
 	it('should handle system prompts', async () => {
-		const initialState = await getInitialState({ system: ['test prompt'] });
-		expect(initialState.messages.length).toBeGreaterThan(0);
-	});
+		const initialState = await getInitialState()
+		expect(initialState.messages.length).toBeGreaterThan(0)
+	})
 })

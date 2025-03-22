@@ -1,7 +1,8 @@
 import {
 	defaultInstructions,
 	defaultPrompt,
-	templateInstructions,
+	templateInstructionsInteractive,
+	templateInstructionsOneShot,
 } from '~/prompts/system'
 import type { AppState } from '~/state/slices/chat-slice'
 import createMessage from '~/utils/create-message'
@@ -24,7 +25,7 @@ const getInitialState = async () => {
 		hasInvoked: false,
 	}
 	const {
-		values: { system },
+		values: { system, interactive },
 		positionals,
 	} = args
 
@@ -36,6 +37,11 @@ const getInitialState = async () => {
 
 			// If the system prompt template has variables...
 			if (hasVariables(content)) {
+				// Determine the interactivity model before selecting the prompt...
+				const templateInstructions = interactive
+					? templateInstructionsInteractive
+					: templateInstructionsOneShot
+
 				initialState.messages.push(
 					createMessage(
 						'system',

@@ -19,7 +19,7 @@ Instructions:
 export const defaultInstructions =
 	'Follow the user prompts, ask for more information from the user if needed.'
 
-export const templateInstructions = `The user has supplied the following template as instructions.
+export const templateInstructionsInteractive = `The user has supplied the following template as instructions.
 
 Template:
 {template}
@@ -31,3 +31,15 @@ Variables:
 
 Ask for each variable as a seperate assistant prompt. Once all variables have been supplied by the user perform the instructions in the template.
 `
+
+export const templateInstructionsOneShot = `TThe user has supplied the following template as instructions.
+
+Template:
+{template}
+
+The following variable should be provided in advance by the user.
+
+Variables:
+{variables}
+
+Attempt to perform the instructions in the template. Attempt to infer the variable values even if names are not an exact match. If not enough of the variables were provided to complete the instructions in the user template inform the user.`

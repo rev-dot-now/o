@@ -1,7 +1,7 @@
 ![image](https://github.com/user-attachments/assets/20cbd02a-47be-4dc2-b3e9-ab89f83bff88)
 
 
-Welcome to **o** your self-referential CLI tool that's here to revolutionize the
+Welcome to **o**, your self-referential CLI tool that's here to revolutionize the
 way you think about programming and content generation! Short for "ouroboros",
 **o** is not just a tool; it's your new best friend in the world of
 meta-programming with AI. Whether you're a seasoned developer or just starting
@@ -33,6 +33,9 @@ for both simple and complex tasks.
     Prompts](#interactive-mode-with-system-prompts)
   - [One-Shot Mode](#one-shot-mode)
   - [One-Shot Mode with System Prompts](#one-shot-mode-with-system-prompts)
+- [Advanced Usage Examples](#advanced-usage-examples)
+  - [Template Usage in Interactive Mode](#template-usage-in-interactive-mode)
+  - [Templates Usage in One-Shot Mode](#templates-usage-in-one-shot-mode)
 - [Summary of Flags](#summary-of-flags)
 - [Technologies Used](#technologies-used)
 - [LLM Model Agnostic](#llm-model-agnostic)
@@ -107,9 +110,9 @@ This will create the `o` command in the `dist/` folder at the root of the
 project. Once built, you can copy the produced binary and use it anywhere on
 your system.
 
-**Note**: To use **o** anywhere on your system, simply ensure that you have an
-`.env.local` file with your `OPENAI_API_KEY` in the same execution path as
-**o**.
+> Note: To use **o** anywhere on your system, simply ensure that you have an
+> `OPENAI_API_KEY` set as an environment variable or in a local `.env` or
+> `.env.local` file
 
 ```bash
 bun run build
@@ -173,7 +176,7 @@ using the `-s` flag.
 $ echo "You only speak in riddles." > system-prompt.txt
 
 # Start a chat session with the system prompt
- bun run dev -s system-prompt.txt -i
+$ bun run dev -s system-prompt.txt -i
 In shadows I dwell, where secrets are kept,  
 With files and with folders, my knowledge is adept.  
 What task do you seek, in this digital maze?  
@@ -285,8 +288,13 @@ FizzBuzz
 ## Advanced Usage Examples
 
 Additionally, `o` provides a robust templating system enabling you to compose
-templates that have variables defined in them in them. Variables are surrounded
+templates that have variables defined in them. Variables are surrounded
 in curly braces (example: "Hello {name}!").
+
+The agent will attempt to infer the meaning of the variables from both the
+provided template and the variable names.
+
+### Template Usage in Interactive Mode
 
 ```ts
 $ echo "\
@@ -300,6 +308,25 @@ I have added TSDoc comments to both the `icon.tsx` and `button.tsx` files in the
 `./components` directory. If you need any further modifications or additional
 files to comment on, please let me know!
 ```
+
+> Note: Templates with multiple variables are best used in interactive mode
+> unless the input is serialized using a format the agent can infer.
+
+### Templates Usage in One-Shot Mode
+
+```ts
+# Using the same comment-prompt template provided earlier.
+
+$ o -s comment-prompt.txt commentFormat: TSDoc files: the files in ./components
+> commentFormat: TSDoc files: the files in ./components
+I have successfully added TSDoc comments to the following files in the `./components` directory:
+
+1. **icon.tsx**
+2. **button.tsx**
+
+If you need any further modifications or assistance, feel free to ask!
+```
+
 
 ## Summary of Flags
 
