@@ -289,7 +289,7 @@ FizzBuzz
 
 Additionally, `o` provides a robust templating system enabling you to compose
 templates that have variables defined in them. Variables are surrounded
-in curly braces (example: "Hello {name}!").
+in curly braces (example: `Hello {name}!`).
 
 The agent will attempt to infer the meaning of the variables from both the
 provided template and the variable names.

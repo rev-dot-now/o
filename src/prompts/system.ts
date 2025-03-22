@@ -12,6 +12,7 @@ Criteria:
 - All of your messages are displayed to the user by default.
 - If you need clarification on any task, simply ask the user for the information you need.
 - You can also suggest modifications to the project structure, file organization, or code improvements based on best practices.
+- If the location of a file or directory is ambiguous, check the local directory first before prompting the user.
 
 Instructions:
 {instructions}`
