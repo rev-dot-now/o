@@ -1,8 +1,7 @@
 ![image](https://github.com/user-attachments/assets/20cbd02a-47be-4dc2-b3e9-ab89f83bff88)
 
 
-Welcome to **o**, your self-referential CLI tool that's here to revolutionize the
-way you think about programming and content generation! Short for "ouroboros",
+Welcome to **o**, a self-referential CLI tool designed to revolutionize your approach to programming and content generation! Short for "ouroboros",
 **o** is not just a tool; it's your new best friend in the world of
 meta-programming with AI. Whether you're a seasoned developer or just starting
 out, **o** makes coding feel like a breeze!
@@ -12,12 +11,12 @@ out, **o** makes coding feel like a breeze!
 - **AI Magic**: Harness the power of AI with tools that understand your needs
   and adapt to your workflow.
 - **Cross-Platform**: Built with the latest tech stack, **o** runs smoothly on
-  any platform. No more compatibility headaches!
+  any platform. Say goodbye to compatibility headaches!
 - **Community Driven**: Join a growing community of innovators and creators.
   Your ideas can shape the future of **o**!
 
 Where **o** really shines is in completely automated tasks from natural language
-prompts, including self-generating its own features. This capability allows
+prompts, including self-generating its features. This capability allows
 users to interact with **o** in a more intuitive way, making it a powerful tool
 for both simple and complex tasks.
 
@@ -45,7 +44,7 @@ for both simple and complex tasks.
 ## Tools
 
 The **o** architecture has several tools available for basic file-system
-operations, all powered by the latest in AI technology. Here's what you can do:
+operations, all powered by the latest in AI technology. Here’s what you can accomplish:
 
 - **command-exec**: Execute a command in the CLI and retrieve the results. This
   tool allows you to run any command as if you were typing it directly into the
@@ -67,7 +66,7 @@ created. All other tools were generated within **o**'s self-hosted environment.
 
 ## Installation from Source
 
-Getting started with **o** is a breeze! Just clone the repository and install
+Getting started with **o** is straightforward! Just clone the repository and install
 Bun, and you're ready to dive into the world of meta-programming and content
 generation like never before.
 
@@ -94,8 +93,7 @@ generation like never before.
 
 ## Run Locally
 
-Ready to see **o** in action? Running it locally is straightforward. Fire up
-your terminal and run the command below. You'll be generating content and
+Ready to see **o** in action? Running it locally is straightforward. Open your terminal and execute the command below. You'll be generating content and
 automating tasks in no time!
 
 ```bash
@@ -133,8 +131,7 @@ capabilities. **o** operates in two modes:
 Both modes offer flexible ways to generate content, automate tasks, and explore
 meta-programming workflows.
 
-> Note: In all of the following examples we will be using `o` compiled to a
-> binary to run the same examples localy use `bun run dev`.
+> Note: In the following examples, we will use the compiled binary of `o`. To run the same examples locally, use `bun run dev`.
 
 ---
 
@@ -224,7 +221,7 @@ What more do you seek, my friend, do you hear?
 
 ### One-Shot Mode
 
-You can immediately invoke **o** to perform a task.
+You can invoke **o** immediately to perform a task.
 
 ```bash
 # Immediately invoke `o`.
@@ -299,6 +296,10 @@ provided template and the variable names.
 
 ### Template Usage in Interactive Mode
 
+In interactive mode `o` will ask you for the values of each of the variables
+defined in the template in a step-wise fashion. This can be a great way to
+define processes in automations.
+
 ```bash
 $ echo "\
 Provide source code comments for the following files in {comment_format}:
@@ -316,10 +317,12 @@ I have added TSDoc comments to both the `icon.tsx` and `button.tsx` files in the
 files to comment on, please let me know!
 ```
 
-> Note: Templates with multiple variables are best used in interactive mode
-> unless the input is serialized using a format the agent can infer.
-
 ### Templates Usage in One-Shot Mode
+
+In One-Shot Mode, most variables defined in the template must be provided at once. The agent will assess whether it can complete the task with
+the variables provided. It is recommended to provide the variables in a
+serialized format. However, the agent will attempt to match the variables
+defined in the prompt, to whatever input it receives.
 
 ```bash
 # Using the same comment-prompt template provided earlier.
@@ -392,8 +395,7 @@ world!
 
 ## Blog Entries
 
-- [o - AI-Powered CLI Tool](https://hans.oksendahl.com/blog/o) - An Introduction
-  basically the README in brief.
+- [o - AI-Powered CLI Tool](https://hans.oksendahl.com/blog/o) - An Introduction: a brief overview of the README.
 - [o - Going Deeper](https://hans.oksendahl.com/blog/o-going-deeper) - More
   about the author and the research process that went into the creation of this
   tool.
