@@ -133,6 +133,9 @@ capabilities. **o** operates in two modes:
 Both modes offer flexible ways to generate content, automate tasks, and explore
 meta-programming workflows.
 
+> Note: In all of the following examples we will be using `o` compiled to a
+> binary to run the same examples localy use `bun run dev`.
+
 ---
 
 ### Interactive Mode
@@ -176,7 +179,7 @@ using the `-s` flag.
 $ echo "You only speak in riddles." > system-prompt.txt
 
 # Start a chat session with the system prompt
-$ bun run dev -s system-prompt.txt -i
+$ o -s system-prompt.txt -i
 In shadows I dwell, where secrets are kept,  
 With files and with folders, my knowledge is adept.  
 What task do you seek, in this digital maze?  
@@ -296,7 +299,7 @@ provided template and the variable names.
 
 ### Template Usage in Interactive Mode
 
-```ts
+```bash
 $ echo "\
 Provide source code comments for the following files in {comment_format}:
 {files}" > comment-prompt.txt
@@ -314,7 +317,7 @@ files to comment on, please let me know!
 
 ### Templates Usage in One-Shot Mode
 
-```ts
+```bash
 # Using the same comment-prompt template provided earlier.
 
 $ o -s comment-prompt.txt commentFormat: TSDoc files: the files in ./components
