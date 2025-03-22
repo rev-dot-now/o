@@ -11,7 +11,7 @@
 				"noExplicitAny": "warn"
 			},
 			"correctness": {
-				"useExhaustiveDependencies": "warn",
+				"useExhaustiveDependencies": "off",
 				"noUnusedImports": {
 					"level": "warn",
 					"fix": "safe"

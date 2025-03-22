@@ -34,12 +34,21 @@ const Chat = () => {
 	const isLoading = useAppSelector(selectIsLoading)
 	const dispatch = useAppDispatch()
 
+	/**
+	 * Handles changes to the user message input.
+	 * @param {string} currentUserMessageContent - The current content of the user message input.
+	 */
 	const onChange = useCallback(
 		(currentUserMessageContent: string) =>
 			dispatch(setUserMessageContent(currentUserMessageContent)),
 		[dispatch],
 	)
 
+	/**
+	 * Handles the submission of the user message.
+	 * Invokes the agent with the current messages and updates the state accordingly.
+	 * @param {string} currentUserMessageContent - The content of the user message to submit.
+	 */
 	const onSubmit = useCallback(
 		async (currentUserMessageContent: string) => {
 			dispatch(setIsLoading(true))
@@ -51,7 +60,6 @@ const Chat = () => {
 
 				agentInvokeMessages.push(userMessage)
 
-				console.log(agentInvokeMessages)
 				dispatch(addMessage(userMessage))
 				dispatch(setUserMessageContent(''))
 			}
