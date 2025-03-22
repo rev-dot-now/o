@@ -308,7 +308,7 @@ Provide source code comments for the following files in {comment_format}:
 $ o -i -s comment-prompt.txt
 Please provide the comment format you would like to use for the source code
 comments.
-> TSDOC
+> TSDoc
 Great! Now, please provide the list of files that you would like to add comments
 to. This will be the value for `files`.
 > All the files in ./components
