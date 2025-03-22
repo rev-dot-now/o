@@ -402,7 +402,8 @@ world!
 
 ## Blog Entries
 
-- [o - AI-Powered CLI Tool](https://hans.oksendahl.com/blog/o) - An Introduction: a brief overview of the README.
+- [o - AI-Powered CLI Tool](https://hans.oksendahl.com/blog/o) - An
+  Introduction: a brief overview of the README.
 - [o - Going Deeper](https://hans.oksendahl.com/blog/o-going-deeper) - More
   about the author and the research process that went into the creation of this
   tool.
@@ -410,3 +411,5 @@ world!
   An analysis of the problematic factors that could be exploited using tools
   like this, some of the individuals currently using them, and revelations about
   their nefarious purposes.
+- [Rant: Why I Refuse to Use AI Tools in My Browser](https://hans.oksendahl.com/blog/rant-about-ai-tools) -
+  Some explanations about the impetus for the development of `o`.
