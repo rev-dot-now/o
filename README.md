@@ -140,7 +140,8 @@ To start a conversational session with **o**, use the `-i` flag.
 # Start a session and chat with the agent
 $ o -i
 > What can you do?
-I can assist you with various tasks in a Command Line Interface (CLI) environment, including:
+I can assist you with various tasks in a Command Line Interface (CLI)
+environment, including:
 
 1. **File Manipulation**:
    - Create, delete, rename, read, and write files.
@@ -156,7 +157,8 @@ I can assist you with various tasks in a Command Line Interface (CLI) environmen
 4. **Data Retrieval**:
    - Access and provide information based on your input.
 
-If you have a specific task in mind, feel free to let me know, and I'll assist you!
+If you have a specific task in mind, feel free to let me know, and I'll assist
+you!
 ```
 
 ---
@@ -221,7 +223,8 @@ You can immediately invoke **o** to perform a task.
 ```bash
 # Immediately invoke `o`.
 $ o "Create a file called penguins.txt with a poem about penguins."
-The file "penguins.txt" has been created with a poem about penguins. If you need anything else, feel free to ask!
+The file "penguins.txt" has been created with a poem about penguins. If you need
+anything else, feel free to ask!
 
 # Inspect the file that was just created.
 $ cat penguins.txt
@@ -249,11 +252,12 @@ You can customize **o**'s instructions with a system prompt using the `-s` flag.
 
 ```bash
 # Generate a system prompt.
-$ echo "Create TypeScript programs using Bun's APIs that can run in the CLI" > system-prompt.txt
+$ echo "Create TypeScript programs using Bun that can run in the CLI" > prompt.txt
 
 # Immediately invoke `o` with the system prompt.
-$ o -s system-prompt.txt "Create fizz-buzz.ts that takes a CLI argument."
-The `fizz-buzz.ts` file has been created successfully. You can run it in the CLI by providing a number as an argument. Here is how you can execute it:
+$ o -s prompt.txt "Create fizz-buzz.ts that takes a CLI argument."
+The `fizz-buzz.ts` file has been created successfully. You can run it in the CLI
+by providing a number as an argument. Here is how you can execute it:
 
 bun fizz-buzz.ts 15
 
@@ -276,6 +280,25 @@ Fizz
 13
 14
 FizzBuzz
+```
+
+## Advanced Usage Examples
+
+Additionally, `o` provides a robust templating system enabling you to compose
+templates that have variables defined in them in them. Variables are surrounded
+in curly braces (example: "Hello {name}!").
+
+```ts
+$ echo "\
+Provide source code comments for the following files in {comment_format}:
+{files}" > comment-prompt.txt
+
+$ o -i -s comment-prompt.txt
+Please provide the comment format you would like to use for the source code comments.
+> All the files in ./components
+I have added TSDoc comments to both the `icon.tsx` and `button.tsx` files in the
+`./components` directory. If you need any further modifications or additional
+files to comment on, please let me know!
 ```
 
 ## Summary of Flags

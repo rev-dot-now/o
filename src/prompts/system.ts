@@ -24,10 +24,10 @@ export const templateInstructions = `The user has supplied the following templat
 Template:
 {template}
 
-The template has a number of variables defined. Ask for the values of each of the variables one-by-one before proceeding.
+Infer the use of each variable from the provided template and the variable name.
 
 Variables:
 {variables}
 
-Once all variables have been supplied by the user perform the instructures in the template.
+Ask for each variable as a seperate assistant prompt. Once all variables have been supplied by the user perform the instructions in the template.
 `

@@ -64,12 +64,27 @@ export const selectMessages = (state: RootState) =>
 export const selectLastMessage = (state: RootState) =>
 	selectMessages(state).at(-1)
 
+/**
+ * Selects the loading state from the chat slice.
+ * @param {RootState} state - The application state.
+ * @returns {boolean} The loading state of the agent.
+ */
 export const selectIsLoading = (state: RootState) =>
 	selectChatSlice(state).isLoading
 
+/**
+ * Selects the user message content from the chat slice.
+ * @param {RootState} state - The application state.
+ * @returns {boolean} The loading state of the agent.
+ */
 export const selectUserMessageContent = (state: RootState) =>
 	selectChatSlice(state).userMessageContent
 
+/**
+ * Select whether the agent has been invoked at least once.
+ * @param {RootState} state - The application state.
+ * @returns {boolean} Whether the agent has been invoked at least once.
+ */
 export const selectHasInvoked = (state: RootState) =>
 	selectChatSlice(state).hasInvoked
 
