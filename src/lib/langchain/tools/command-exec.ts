@@ -10,6 +10,12 @@ export const CommandExecSchema = z.object({
 })
 export type CommandExecSchema = z.infer<typeof CommandExecSchema>
 
+/**
+ * Tool for executing a command in the CLI.
+ * @param {CommandExecSchema} params - The parameters for the command execution tool.
+ * @returns {Promise<string>} The standard output of the executed command.
+ * @throws {Error} If there is an error during command execution.
+ */
 const toolCommandExec = tool(
 	async ({ command }): Promise<string> => {
 		const { stdout, stderr } = await execPromise(command)

@@ -305,7 +305,11 @@ Provide source code comments for the following files in {comment_format}:
 {files}" > comment-prompt.txt
 
 $ o -i -s comment-prompt.txt
-Please provide the comment format you would like to use for the source code comments.
+Please provide the comment format you would like to use for the source code
+comments.
+> TSDOC
+Great! Now, please provide the list of files that you would like to add comments
+to. This will be the value for `files`.
 > All the files in ./components
 I have added TSDoc comments to both the `icon.tsx` and `button.tsx` files in the
 `./components` directory. If you need any further modifications or additional
