@@ -285,6 +285,8 @@ Fizz
 FizzBuzz
 ```
 
+---
+
 ## Advanced Usage Examples
 
 Additionally, `o` provides a robust templating system enabling you to compose
@@ -293,6 +295,8 @@ in curly braces (example: `Hello {name}!`).
 
 The agent will attempt to infer the meaning of the variables from both the
 provided template and the variable names.
+
+---
 
 ### Template Usage in Interactive Mode
 
@@ -317,6 +321,8 @@ I have added TSDoc comments to both the `icon.tsx` and `button.tsx` files in the
 files to comment on, please let me know!
 ```
 
+---
+
 ### Templates Usage in One-Shot Mode
 
 In One-Shot Mode, most variables defined in the template must be provided at once. The agent will assess whether it can complete the task with
@@ -337,6 +343,7 @@ I have successfully added TSDoc comments to the following files in the `./compon
 If you need any further modifications or assistance, feel free to ask!
 ```
 
+---
 
 ## Summary of Flags
 
