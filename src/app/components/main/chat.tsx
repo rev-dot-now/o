@@ -50,6 +50,8 @@ const Chat = () => {
 				const userMessage = createMessage('user', currentUserMessageContent)
 
 				agentInvokeMessages.push(userMessage)
+
+				console.log(agentInvokeMessages)
 				dispatch(addMessage(userMessage))
 				dispatch(setUserMessageContent(''))
 			}
@@ -75,7 +77,7 @@ const Chat = () => {
 	)
 
 	useEffect(() => {
-		onSubmit()
+		onSubmit(userMessageContent)
 	}, [])
 
 	return (

@@ -389,3 +389,15 @@ please feel free to contribute. Together, we can make **o** even better!
 This project is licensed under a restricted MIT License - see the
 [LICENSE](LICENSE) file for details. We're excited to share **o** with the
 world!
+
+## Blog Entries
+
+- [o - AI-Powered CLI Tool](https://hans.oksendahl.com/blog/o) - An Introduction
+  basically the README in brief.
+- [o - Going Deeper](https://hans.oksendahl.com/blog/o-going-deeper) - More
+  about the author and the research process that went into the creation of this
+  tool.
+- [The Looming Threat of AI: A Call to Action](https://hans.oksendahl.com/blog/the-looming-threat-of-ai) - 
+  An analysis of the problematic factors that could be exploited using tools
+  like this, some of the individuals currently using them, and revelations about
+  their nefarious purposes.
