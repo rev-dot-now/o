@@ -1,0 +1,45 @@
+{
+	"name": "@rev-dot-now/o",
+	"version": "0.0.1",
+	"module": "src/index.tsx",
+	"type": "module",
+	"devDependencies": {
+		"@biomejs/biome": "^1.9.4",
+		"@testing-library/react-hooks": "^8.0.1",
+		"@types/bun": "latest",
+		"@types/react": "^19.0.10",
+		"react-devtools-core": "^6.1.1",
+		"rimraf": "^6.0.1"
+	},
+	"peerDependencies": {
+		"typescript": "^5.7.2"
+	},
+	"dependencies": {
+		"@langchain/anthropic": "^0.3.15",
+		"@langchain/aws": "^0.1.7",
+		"@langchain/cerebras": "^0.0.1",
+		"@langchain/cohere": "^0.3.2",
+		"@langchain/core": "^0.3.42",
+		"@langchain/deepseek": "^0.0.1",
+		"@langchain/google-genai": "^0.1.12",
+		"@langchain/groq": "^0.2.0",
+		"@langchain/langgraph": "^0.2.55",
+		"@langchain/mistralai": "^0.2.0",
+		"@langchain/ollama": "^0.2.0",
+		"@langchain/openai": "^0.3.17",
+		"@langchain/xai": "^0.0.2",
+		"@reduxjs/toolkit": "^2.6.1",
+		"ink": "^5.2.0",
+		"ink-spinner": "^5.0.0",
+		"langchain": "^0.3.19",
+		"react": "^18.3.1",
+		"react-redux": "^9.2.0",
+		"zod": "^3.24.2"
+	},
+	"scripts": {
+		"bundle": "scripts/bundle.sh",
+		"compile": "scripts/compile.sh",
+		"build": "scripts/build.sh",
+		"dev": "scripts/dev.sh"
+	}
+}
