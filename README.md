@@ -104,6 +104,12 @@ content generation like never before.
   cd o
   ```
 
+- Install dependencies:
+
+  ```bash
+  bun install
+  ```
+
 ## Run Locally
 
 Ready to see **o** in action? Running it locally is straightforward. Open your
