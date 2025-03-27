@@ -33,9 +33,12 @@ simple and complex tasks.
 
 - [Tools](tools)
 - [Installation from Source](#installation-from-source)
-- [Run Locally](#run-locally)
+- [Supported LLM Providers](#supported-llm-providers)
+  - [LLM Provider Configuration](#llm-provider-configuration)
 - [Summary of Flags](#summary-of-flags)
+- [Run Locally](#run-locally)
 - [Compile](#compile)
+- [Agent Creation](#agent-creation)
 - [Usage Examples](#usage-examples)
   - [Interactive Mode](#interactive-mode)
   - [Interactive Mode with System
@@ -46,8 +49,6 @@ simple and complex tasks.
   - [Template Usage in Interactive Mode](#template-usage-in-interactive-mode)
   - [Templates Usage in One-Shot Mode](#templates-usage-in-one-shot-mode)
 - [Technologies Used](#technologies-used)
-- [Supported LLM Providers](#supported-llm-providers)
-  - [LLM Model Configuration](#llm-model-configuration)
 - [Ethos](#ethos)
 - [Contribution Guidelines](#contribution-guidelines)
 - [License](#license)
@@ -71,44 +72,113 @@ The **o** architecture has several tools available for basic file-system operati
 
 These tools may sound basic, but they are the foundation of **o**'s unique capabilities. You can easily ask **o** to create new tools from scratch! During development, only two tools - `file-read` and `file-write` - were initially created. All other tools were generated within **o**'s self-hosted environment.
 
-## Agent Creation
-
-Creating agents is as simple as defining a template in a file and then executing
-`o` with the `--system` (`-s`) flag. Templates can contain variables.
-
-```bash
-# Example
-echo "Create a poem about {subject} in the style of {style}, save to {filename}." > prompt.txt
-
-o --system prompt.txt --llm xai --config xai-config.json --interactive
-# Equivalent to:
-# o -s prompt.txt -l xai -c xai-config.json -i
-```
-
 ## Installation from Source
 
 Getting started with **o** is straightforward! Just clone the repository and
 install Bun, and you're ready to dive into the world of meta-programming and
 content generation like never before.
 
-- Install Bun: [Documentation](https://bun.sh/docs/installation)
-- Clone the repository:
+1. Install Bun: [Documentation](https://bun.sh/docs/installation)
+2. Clone the repository:
 
-  ```bash
-  git clone https://github.com/rev-dot-now/o.git
-  ```
+   ```bash
+   git clone https://github.com/rev-dot-now/o.git
+   ```
 
-- Change into the project directory:
+3. Change into the project directory:
 
-  ```bash
-  cd o
-  ```
+   ```bash
+   cd o
+   ```
 
-- Install dependencies:
+4. Install dependencies:
 
-  ```bash
-  bun install
-  ```
+   ```bash
+   bun install
+   ```
+
+5. Set the `O_LLM` and `O_CONFIG` environment variables:
+
+   See the list of [Supported LLM Providers](#supported-llm-providers) for options.
+
+   You can also set 
+ 
+   ```bash
+   # For instance I am using OpenAI
+   export O_LLM="openai"
+   # Set the path for 
+   export O_CONFIG="~/.o/config.json"
+   ```
+
+6. Setup your LLM Model Configuration:
+
+   See the list of [LLM Provider Configuration](#llm-provider-configuration)s
+   for how to configure your LLM provider.
+
+   ```bash
+   # Make
+   mkdir ~/.o
+
+   # NOTE: These instructions are specific to the OpenAI LLM provider.
+   echo '{ "apiKey": "[YOUR_API_KEY]", "model": "gpt-4o", "temperature": 0 }' > ~/.o/config.json
+   ```
+
+## Supported LLM Providers
+
+The LLM is set through the `--llm` (`-l`) flag.
+
+- Anthropic (`--llm anthropic`)
+- AWS Bedrock (`--llm aws`)
+- Cerebras (`--llm cerebras`)
+- Cohere (`--llm cohere`)
+- DeepSeek (`--llm deepseek`)
+- Google Generative AI (`--llm googlegenai`)
+- Groq (`--llm groq`)
+- MistralAI (`--llm mistralai`)
+- Ollama (`--llm ollama`)
+- OpenAI (`--llm openai`) ✅
+- xAI (`--llm xai`)
+
+✅ - Verified
+
+> Note: There is no default LLM for `o`. However, you can set the environment
+> variable `O_LLM` to provide one. Setting the environment variable is
+> particularly useful when using `o` compiled as a binary.
+
+### LLM Provider Configuration
+
+You can provide the configuration for the LLM model specified through the
+`--config` (`-c`) flag. Please, see the appropriate configuration page in the
+langchain documentation for constructor configuration arguments. Configuration
+files are in JSON format.
+
+- [Anthropic](https://v03.api.js.langchain.com/classes/_langchain_anthropic.index.ChatAnthropic.html#constructor)
+- [AWS
+  Bedrock](https://v03.api.js.langchain.com/classes/_langchain_aws.ChatBedrockConverse.html#constructor)
+- [Cerebras](https://v03.api.js.langchain.com/classes/_langchain_cerebras.ChatCerebras.html#constructor)
+- [Cohere](https://v03.api.js.langchain.com/classes/_langchain_cohere.ChatCohere.html#constructor)
+- [DeepSeek](https://v03.api.js.langchain.com/classes/_langchain_deepseek.ChatDeepSeek.html#constructor)
+- [Google Generative
+  AI](https://v03.api.js.langchain.com/classes/_langchain_google_genai.ChatGoogleGenerativeAI.html#constructor)
+- [Groq](https://v03.api.js.langchain.com/classes/_langchain_groq.ChatGroq.html#constructor)
+- [MistralAI](https://v03.api.js.langchain.com/classes/_langchain_mistralai.ChatMistralAI.html#constructor)
+- [Ollama](https://v03.api.js.langchain.com/classes/_langchain_ollama.ChatOllama.html#constructor)
+- [OpenAI](https://v03.api.js.langchain.com/classes/_langchain_openai.ChatOpenAI.html#constructor)
+- [xAI](https://v03.api.js.langchain.com/classes/_langchain_xai.ChatXAI.html)
+
+> Note: the default configuration path is `./config.json`. However, you can set
+> the environment variable `O_CONFIG` to set one. setting the environment
+> variable is particular useful when using `o` compiled as a binary.
+
+
+## Summary of Flags
+
+| Long | Short | Default | Description |
+|---|---|---|---|
+| --config | -c | `process.env.O_CONFIG` | JSON config file for the LLM type |
+| --interactive | -i | false | Back-and-forth dialogue, exploratory conversations |
+| --llm | -l | `process.env.O_LLM` | Specify the LLM provider ([Supported LLM Providers](#supported-llm-providers)) |
+| --system | -s | undefined | Tailor the agent's personality or constraints |
 
 ## Run Locally
 
@@ -120,15 +190,6 @@ automating tasks in no time!
 # Usage:
 bun run dev [flags] "optional user prompt"
 ```
-
-## Summary of Flags
-
-| Long | Short | Default | Description |
-|---|---|---|---|
-| --config | -c | './config.json' | JSON config file for the LLM type |
-| --interactive | -i | false | Back-and-forth dialogue, exploratory conversations |
-| --llm | -l | undefined | Specify the LLM provider ([Supported LLM Providers](#supported-llm-providers)) |
-| --system | -s | undefined | Tailor the agent's personality or constraints |
 
 ## Compile
 
@@ -331,53 +392,6 @@ If you need any further modifications or assistance, feel free to ask!
 - **Redux Toolkit**: For state management.
 - **TypeScript**: Ensuring type safety and better developer experience.
 - **Bun**: A fast JavaScript runtime for modern web applications.
-
-## Supported LLM Providers
-
-The LLM is set through the `--llm` (`-l`) flag.
-
-- Anthropic (`--llm anthropic`)
-- AWS Bedrock (`--llm aws`)
-- Cerebras (`--llm cerebras`)
-- Cohere (`--llm cohere`)
-- DeepSeek (`--llm deepseek`)
-- Google Generative AI (`--llm googlegenai`)
-- Groq (`--llm groq`)
-- MistralAI (`--llm mistralai`)
-- Ollama (`--llm ollama`)
-- OpenAI (`--llm openai`) ✅
-- xAI (`--llm xai`)
-
-✅ - Verified
-
-> Note: There is no default LLM for `o`. However, you can set the environment
-> variable `O_LLM` to provide one. Setting the environment variable is
-> particularly useful when using `o` compiled as a binary.
-
-### LLM Model Configuration
-
-You can provide the configuration for the LLM model specified through the
-`--config` (`-c`) flag. Please, see the appropriate configuration page in the
-langchain documentation for constructor configuration arguments. Configuration
-files are in JSON format.
-
-- [Anthropic](https://v03.api.js.langchain.com/classes/_langchain_anthropic.index.ChatAnthropic.html#constructor)
-- [AWS
-  Bedrock](https://v03.api.js.langchain.com/classes/_langchain_aws.ChatBedrockConverse.html#constructor)
-- [Cerebras](https://v03.api.js.langchain.com/classes/_langchain_cerebras.ChatCerebras.html#constructor)
-- [Cohere](https://v03.api.js.langchain.com/classes/_langchain_cohere.ChatCohere.html#constructor)
-- [DeepSeek](https://v03.api.js.langchain.com/classes/_langchain_deepseek.ChatDeepSeek.html#constructor)
-- [Google Generative
-  AI](https://v03.api.js.langchain.com/classes/_langchain_google_genai.ChatGoogleGenerativeAI.html#constructor)
-- [Groq](https://v03.api.js.langchain.com/classes/_langchain_groq.ChatGroq.html#constructor)
-- [MistralAI](https://v03.api.js.langchain.com/classes/_langchain_mistralai.ChatMistralAI.html#constructor)
-- [Ollama](https://v03.api.js.langchain.com/classes/_langchain_ollama.ChatOllama.html#constructor)
-- [OpenAI](https://v03.api.js.langchain.com/classes/_langchain_openai.ChatOpenAI.html#constructor)
-- [xAI](https://v03.api.js.langchain.com/classes/_langchain_xai.ChatXAI.html)
-
-> Note: the default configuration path is `./config.json`. However, you can set
-> the environment variable `O_CONFIG` to set one. setting the environment
-> variable is particular useful when using `o` compiled as a binary.
 
 ## Ethos
 
