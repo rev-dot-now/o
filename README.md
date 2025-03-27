@@ -417,10 +417,6 @@ world!
    clear communication about changes.
 5. **Continuous Learning and Adaptation**: We emphasize ongoing improvement and
    responsiveness to feedback.
-6. **Collaboration and Community Engagement**: We encourage community
-   involvement to foster innovation and diverse contributions.
-7. **Sustainability**: We consider the long-term impact and viability of the
-   project, both environmentally and in terms of community support.
 
 ## Blog Entries
 
