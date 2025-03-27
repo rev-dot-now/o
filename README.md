@@ -100,27 +100,28 @@ content generation like never before.
 5. Set the `O_LLM` and `O_CONFIG` environment variables:
 
    See the list of [Supported LLM Providers](#supported-llm-providers) for options.
-
-   You can also set 
  
    ```bash
-   # For instance I am using OpenAI
+   # ~/.zshrc
+
+   # NOTE: `openai` is being used here as an example, but you can use any supported LLM provider.
    export O_LLM="openai"
-   # Set the path for 
-   export O_CONFIG="~/.o/config.json"
+   # Set the path for the config file.
+   export O_CONFIG="~/.config/o/config.json"
    ```
 
 6. Setup your LLM Model Configuration:
 
-   See the list of [LLM Provider Configuration](#llm-provider-configuration)s
+   See the list of [LLM Provider Configurations](#llm-provider-configuration)
    for how to configure your LLM provider.
 
    ```bash
-   # Make
-   mkdir ~/.o
+   # Make the `~/.config/o` directory if it does not already exist.
+   mkdir -p ~/.config/o
 
+   # Create the `o` config file.
    # NOTE: These instructions are specific to the OpenAI LLM provider.
-   echo '{ "apiKey": "[YOUR_API_KEY]", "model": "gpt-4o", "temperature": 0 }' > ~/.o/config.json
+   echo '{ "apiKey": "[YOUR_API_KEY]", "model": "gpt-4o", "temperature": 0 }' > ~/.config/o/config.json
    ```
 
 ## Supported LLM Providers
@@ -167,8 +168,8 @@ files are in JSON format.
 - [xAI](https://v03.api.js.langchain.com/classes/_langchain_xai.ChatXAI.html)
 
 > Note: the default configuration path is `./config.json`. However, you can set
-> the environment variable `O_CONFIG` to set one. setting the environment
-> variable is particular useful when using `o` compiled as a binary.
+> the environment variable `O_CONFIG` to set one. Setting the environment
+> variable is particularly useful when using `o` compiled as a binary.
 
 
 ## Summary of Flags
