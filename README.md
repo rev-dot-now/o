@@ -97,32 +97,27 @@ content generation like never before.
    bun install
    ```
 
-5. Set the `O_LLM` and `O_CONFIG` environment variables:
+5. Set the `O_LLM` and `O_CONFIG` environment variables using a `.env.local` file:
 
-   See the list of [Supported LLM Providers](#supported-llm-providers) for options.
- 
-   ```bash
-   # ~/.zshrc
+   Create a `.env.local` file in the root of your project directory and add the following lines:
 
-   # NOTE: `openai` is being used here as an example, but you can use any supported LLM provider.
-   export O_LLM="openai"
-   # Set the path for the config file.
-   export O_CONFIG="~/.config/o/config.json"
+   ```plaintext
+   # Example using OpenAI as the LLM provider. You can replace "openai" with any supported LLM provider from the list.
+   O_LLM=openai
+   O_CONFIG=./config.json
    ```
+
+   This method is preferred as Bun automatically reads the `.env.local` file, making it shell-agnostic.
 
 6. Setup your LLM Model Configuration:
 
-   See the list of [LLM Provider Configurations](#llm-provider-configuration)
-   for how to configure your LLM provider.
+   Create a `config.json` file in the root of your project directory with the necessary configuration for your chosen LLM provider. For example, if using OpenAI:
 
    ```bash
-   # Make the `~/.config/o` directory if it does not already exist.
-   mkdir -p ~/.config/o
-
-   # Create the `o` config file.
-   # NOTE: These instructions are specific to the OpenAI LLM provider.
-   echo '{ "apiKey": "[YOUR_API_KEY]", "model": "gpt-4o", "temperature": 0 }' > ~/.config/o/config.json
+   echo '{ "apiKey": "[YOUR_API_KEY]", "model": "gpt-4o", "temperature": 0 }' > ./config.json
    ```
+
+   Replace `[YOUR_API_KEY]` with your actual API key. Refer to the [LLM Provider Configurations](#llm-provider-configuration) for specific setup instructions for other providers.
 
 ## Supported LLM Providers
 
