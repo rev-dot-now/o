@@ -374,8 +374,6 @@ If you need any further modifications or assistance, feel free to ask!
 
 We welcome contributions! If you have ideas, suggestions, or improvements, please feel free to contribute. Together, we can make **o** even better!
 
-Per Ethos item #3, we eat our own dog food. If you are contributing please use the provided command `bun run ship-it` to launch an interactive session with `o` to create your commits.
-
 ## License
 
 This project is licensed under a restricted MIT License - see the [LICENSE](LICENSE) file for details. We're excited to share **o** with the world!
