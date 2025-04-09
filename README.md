@@ -1,23 +1,22 @@
 ![image](https://github.com/user-attachments/assets/20cbd02a-47be-4dc2-b3e9-ab89f83bff88)
-*Image: Overview of the **o** CLI Framework*
 
-Welcome to **o**, a CLI framework that transforms tasks into reusable agents using natural language. Originally envisioned as "ouroboros," this cutting-edge framework empowers users to achieve automation effortlessly through natural language inputs. Whether you're crafting intricate workflows or automating everyday tasks, **o** provides the agility and intelligence needed to revolutionize your command line interactions.
+Welcome to **O**, an agentic design framework that transforms tasks into reusable agents using natural language. Originally envisioned as "ouroboros," this cutting-edge framework empowers users to achieve automation effortlessly through natural language inputs. Whether you're crafting intricate workflows or automating everyday tasks, **O** provides the agility and intelligence needed to revolutionize your command line interactions.
 
-## Why You'll Love **o**
+## Why You'll Love **O**
 
 Video demonstration: [O: The Future of Command Line Automation](https://youtu.be/f0Erk-zmuLo?feature=shared)
 
 - ⚡ **Instant Automation**: Leverage the power of AI to rapidly convert natural language prompts into actionable agents, streamlining your workflow.
 - 🔄 **Reusability**: Create agents that can be reused across different projects, saving time and effort while maintaining consistency.
-- 🌐 **Cross-Platform Flexibility**: Designed to run smoothly on any platform, **o** eliminates compatibility issues and integrates seamlessly into your existing infrastructure.
-- 🤝 **Innovative Community**: Join an engaged community of developers and innovators shaping the future of agentic design. Your contributions can influence the evolution of **o**.
+- 🌐 **Cross-Platform Flexibility**: Designed to run smoothly on any platform, **O** eliminates compatibility issues and integrates seamlessly into your existing infrastructure.
+- 🤝 **Innovative Community**: Join an engaged community of developers and innovators shaping the future of agentic design. Your contributions can influence the evolution of **O**.
 - 📈 **Scalability**: Handle complex tasks efficiently with tools that scale alongside your projects, offering unmatched performance and adaptability.
 
-Where **o** really shines is in completely automated tasks from natural language prompts, including self-generating its features. This capability allows users to interact with **o** in a more intuitive way, making it a powerful tool for both simple and complex tasks.
+Where **O** really shines is in completely automated tasks from natural language prompts, including self-generating its features. This capability allows users to interact with **O** in a more intuitive way, making it a powerful tool for both simple and complex tasks.
 
 ## Quick Start
 
-Ready to see **o** in action? Follow these simple steps to get started:
+Ready to see **O** in action? Follow these simple steps to get started:
 
 1. **Install Bun**: [Documentation](https://bun.sh/docs/installation)
 2. **Clone the Repository**:
@@ -71,7 +70,7 @@ Ready to see **o** in action? Follow these simple steps to get started:
 
 ## Tools
 
-The **o** architecture has several tools available for basic file-system operations, all powered by the latest in AI technology. Here’s what you can accomplish:
+The **O** architecture has several tools available for basic file-system operations, all powered by the latest in AI technology. Here’s what you can accomplish:
 
 - **agent-exit**: Exit an interactive agent session. This tool logs an optional message and error before exiting the process with a status code of 0 or 1, depending on whether an error was provided.
 - **command-exec**: Execute a command in the CLI and retrieve the results. This tool allows you to run any command as if you were typing it directly into the terminal, making it a powerful feature for automating tasks and integrating with other command-line utilities.
@@ -85,11 +84,11 @@ The **o** architecture has several tools available for basic file-system operati
 - **file-write**: Write to a file.
 - **http-request**: Make an HTTP request and return the JSON response. This tool allows you to send HTTP requests with a JSON body and receive a JSON response, supporting various HTTP methods and headers.
 
-These tools may sound basic, but they are the foundation of **o**'s unique capabilities. You can easily ask **o** to create new tools from scratch! During development, only two tools - `file-read` and `file-write` - were initially created. All other tools were generated within **o**'s self-hosted environment.
+These tools may sound basic, but they are the foundation of **O**'s unique capabilities. You can easily ask **O** to create new tools from scratch! During development, only two tools - `file-read` and `file-write` - were initially created. All other tools were generated within **O**'s self-hosted environment.
 
 ## Installation from Source
 
-Getting started with **o** is straightforward! Just clone the repository and install Bun, and you're ready to dive into the world of meta-programming and content generation like never before.
+Getting started with **O** is straightforward! Just clone the repository and install Bun, and you're ready to dive into the world of meta-programming and content generation like never before.
 
 1. Install Bun: [Documentation](https://bun.sh/docs/installation)
 2. Clone the repository:
@@ -150,7 +149,7 @@ The LLM is set through the `--llm` (`-l`) flag.
 
 ✅ - Verified
 
-> Note: There is no default LLM for `o`. However, you can set the environment variable `O_LLM` to provide one. Setting the environment variable is particularly useful when using `o` compiled as a binary.
+> Note: There is no default LLM for `O`. However, you can set the environment variable `O_LLM` to provide one. Setting the environment variable is particularly useful when using `O` compiled as a binary.
 
 ### LLM Provider Configuration
 
@@ -168,7 +167,7 @@ You can provide the configuration for the LLM model specified through the `--con
 - [OpenAI](https://v03.api.js.langchain.com/classes/_langchain_openai.ChatOpenAI.html#constructor)
 - [xAI](https://v03.api.js.langchain.com/classes/_langchain_xai.ChatXAI.html)
 
-> Note: the default configuration path is `./config.json`. However, you can set the environment variable `O_CONFIG` to set one. Setting the environment variable is particularly useful when using `o` compiled as a binary.
+> Note: the default configuration path is `./config.json`. However, you can set the environment variable `O_CONFIG` to set one. Setting the environment variable is particularly useful when using `O` compiled as a binary.
 
 ## Summary of Flags
 
@@ -181,7 +180,7 @@ You can provide the configuration for the LLM model specified through the `--con
 
 ## Run Locally
 
-Ready to see **o** in action? Running it locally is straightforward. Open your terminal and execute the command below. You'll be generating content and automating tasks in no time!
+Ready to see **O** in action? Running it locally is straightforward. Open your terminal and execute the command below. You'll be generating content and automating tasks in no time!
 
 ```bash
 # Usage:
@@ -190,30 +189,30 @@ bun run dev [flags] "optional user prompt"
 
 ## Compile
 
-Want to take it a step further? Compiling the **o** command is your next move. This will create the `o` binary in the `dist/` folder at the root of the project. Once built, you can copy the produced binary and use it anywhere on your system.
+Want to take it a step further? Compiling the **O** command is your next move. This will create the `O` binary in the `dist/` folder at the root of the project. Once built, you can copy the produced binary and use it anywhere on your system.
 
 ```bash
 bun run build
 ```
 
-> When using `o` as a binary it is recommended to set the environment variables `O_LLM` and `O_CONFIG` so that a default LLM provider and configuration is always available.
+> When using `O` as a binary it is recommended to set the environment variables `O_LLM` and `O_CONFIG` so that a default LLM provider and configuration is always available.
 
 ## Usage Examples
 
-With **o** successfully set up, let's explore some practical examples of its capabilities. **o** operates in two modes:
+With **O** successfully set up, let's explore some practical examples of its capabilities. **O** operates in two modes:
 
-- **Interactive Mode** (`-i`): Engage in a conversational, back-and-forth chat with **o**, where the agent responds to each input until you decide to end the session.
+- **Interactive Mode** (`-i`): Engage in a conversational, back-and-forth chat with **O**, where the agent responds to each input until you decide to end the session.
 - **One-Shot Mode** (default): Execute a single request directly from the command line and receive an immediate response without entering a persistent session.
 
 Both modes offer flexible ways to generate content, automate tasks, and explore meta-programming workflows.
 
-> Note: In the following examples, we will use the compiled binary of `o`. To run the same examples locally, use `bun run dev`. For all of the following examples the environment variable `O_LLM` was set to `openai` and `O_CONFIG` was `{ "model": "gpt-40", "temperature": 0 }`
+> Note: In the following examples, we will use the compiled binary of `O`. To run the same examples locally, use `bun run dev`. For all of the following examples the environment variable `O_LLM` was set to `openai` and `O_CONFIG` was `{ "model": "gpt-40", "temperature": 0 }`
 
 ---
 
 ### Interactive Mode
 
-To start a conversational session with **o**, use the `-i` flag.
+To start a conversational session with **O**, use the `-i` flag.
 
 ```bash
 # Start a session and chat with the agent
@@ -242,7 +241,7 @@ If you have a specific task in mind, feel free to let me know, and I'll assist y
 
 ### Interactive Mode with System Prompts
 
-You can customize **o**'s personality and behavior by providing a system prompt using the `--system` (`-s`) flag.
+You can customize **O**'s personality and behavior by providing a system prompt using the `--system` (`-s`) flag.
 
 ```bash
 # Create a local system prompt file.
@@ -260,10 +259,10 @@ I have opened an image of a Shiba Inu in your web browser. Enjoy!
 
 ### One-Shot Mode
 
-You can invoke **o** immediately to perform a task.
+You can invoke **O** immediately to perform a task.
 
 ```bash
-# Immediately invoke `o`.
+# Immediately invoke `O`.
 $ o "Create a file called penguins.txt with a poem about penguins."
 The file "penguins.txt" has been created with a poem about penguins. If you need anything else, feel free to ask!
 
@@ -289,7 +288,7 @@ In the world of the penguins, there's nothing to hide.
 
 ### One-Shot Mode with System Prompts
 
-You can customize **o**'s instructions with a system prompt using the `--system` (`-s`) flag.
+You can customize **O**'s instructions with a system prompt using the `--system` (`-s`) flag.
 
 ```bash
 # Reusing the example from earlier...
@@ -305,7 +304,7 @@ $ o --system prompt.txt "shiba inu"
 
 ## Advanced Usage Examples
 
-Additionally, `o` provides a robust templating system enabling you to compose templates that have variables defined in them. Variables are surrounded in curly braces (example: `Hello {name}!`).
+Additionally, `O` provides a robust templating system enabling you to compose templates that have variables defined in them. Variables are surrounded in curly braces (example: `Hello {name}!`).
 
 The agent will attempt to infer the meaning of the variables from both the provided template and the variable name.
 
@@ -313,7 +312,7 @@ The agent will attempt to infer the meaning of the variables from both the provi
 
 ### Template Usage in Interactive Mode
 
-In interactive mode `o` will ask you for the values of each of the variables defined in the template in a step-wise fashion. This can be a great way to define processes in automations.
+In interactive mode `O` will ask you for the values of each of the variables defined in the template in a step-wise fashion. This can be a great way to define processes in automations.
 
 ```bash
 $ echo "\
@@ -351,7 +350,7 @@ If you need any further modifications or assistance, feel free to ask!
 
 ## Technologies Used
 
-**o** is built on a powerful tech stack that includes:
+**O** is built on a powerful tech stack that includes:
 
 - **Ink**: A library for building interactive command-line applications, enhancing the user experience.
 - **React**: For building user interfaces.
@@ -371,15 +370,15 @@ If you need any further modifications or assistance, feel free to ask!
 
 ## Contribution Guidelines
 
-We welcome contributions! If you have ideas, suggestions, or improvements, please feel free to contribute. Together, we can make **o** even better!
+We welcome contributions! If you have ideas, suggestions, or improvements, please feel free to contribute. Together, we can make **O** even better!
 
 ## License
 
-This project is licensed under a restricted MIT License - see the [LICENSE](LICENSE) file for details. We're excited to share **o** with the world!
+This project is licensed under a restricted MIT License - see the [LICENSE](LICENSE) file for details. We're excited to share **O** with the world!
 
 ## Suggestions or Comments
 
-If you have any comments or suggestions about `o` feel free to contact the author <a href="mailto:hans@oksendahl.com">hans@oksendahl.com</a>. We'd love to hear from you!
+If you have any comments or suggestions about `O` feel free to contact the author <a href="mailto:hans@oksendahl.com">hans@oksendahl.com</a>. We'd love to hear from you!
 
 ## Automations Built with O
 
@@ -389,10 +388,10 @@ AgentSmith is a set of LLM agnostic system prompts for creating AI Agents. It is
 
 - **Repository**: [AgentSmith Repository](https://github.com/rev-dot-now/agent-smith)  
 
-AgentSmith integrates seamlessly with the O: Agentic Design CLI framework, allowing users to leverage natural language to automate tasks and create reusable agents. This integration enhances the functionality of AgentSmith prompts, making them more versatile and adaptable to various scenarios.
+AgentSmith integrates seamlessly with the O: Agentic Design framework, allowing users to leverage natural language to automate tasks and create reusable agents. This integration enhances the functionality of AgentSmith prompts, making them more versatile and adaptable to various scenarios.
 
 ## Blog Entries
 
 - [o - AI-Powered CLI Tool](https://hans.oksendahl.com/blog/o) - An Introduction: a brief overview of the README.
 - [o - Going Deeper](https://hans.oksendahl.com/blog/o-going-deeper) - More about the author and the research process that went into the creation of this tool.
-- [Rant: Why I Refuse to Use AI Tools in My Browser](https://hans.oksendahl.com/blog/rant-about-ai-tools) - Some explanations about the impetus for the development of `o`.
+- [Rant: Why I Refuse to Use AI Tools in My Browser](https://hans.oksendahl.com/blog/rant-about-ai-tools) - Some explanations about the impetus for the development of `O`.
