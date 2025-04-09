@@ -53,7 +53,6 @@ Ready to see **o** in action? Follow these simple steps to get started:
 - [Summary of Flags](#summary-of-flags)
 - [Run Locally](#run-locally)
 - [Compile](#compile)
-- [Agent Creation](#agent-creation)
 - [Usage Examples](#usage-examples)
   - [Interactive Mode](#interactive-mode)
   - [Interactive Mode with System Prompts](#interactive-mode-with-system-prompts)
@@ -66,8 +65,9 @@ Ready to see **o** in action? Follow these simple steps to get started:
 - [Ethos](#ethos)
 - [Contribution Guidelines](#contribution-guidelines)
 - [License](#license)
-- [Blog Entries](#blog-entries)
 - [Suggestions or Comments](#suggestions-or-comments)
+- [Automations Built with O](#automations-built-with-o)
+- [Blog Entries](#blog-entries)
 
 ## Tools
 
@@ -368,7 +368,6 @@ If you need any further modifications or assistance, feel free to ask!
 4. **Transparency and Ethical AI Use**: We commit to responsible AI use and clear communication about changes.
 5. **Continuous Learning and Adaptation**: We emphasize ongoing improvement and responsiveness to feedback.
 6. **Collaboration and Community Engagement**: We encourage community involvement to foster innovation and diverse contributions.
-7. **Sustainability**: We consider the long-term impact and viability of the project, both environmentally and in terms of community support.
 
 ## Contribution Guidelines
 
@@ -378,12 +377,22 @@ We welcome contributions! If you have ideas, suggestions, or improvements, pleas
 
 This project is licensed under a restricted MIT License - see the [LICENSE](LICENSE) file for details. We're excited to share **o** with the world!
 
+## Suggestions or Comments
+
+If you have any comments or suggestions about `o` feel free to contact the author <a href="mailto:hans@oksendahl.com">hans@oksendahl.com</a>. We'd love to hear from you!
+
+## Automations Built with O
+
+### AgentSmith
+
+AgentSmith is a set of LLM agnostic system prompts for creating AI Agents. It is designed to enhance the creation, evaluation, and testing of system prompts for AI agents. The prompts are crafted to be general enough for any LLM but are purpose-built to benefit from the template parsing of the O framework.
+
+- **Repository**: [AgentSmith Repository](https://github.com/rev-dot-now/agent-smith)  
+
+AgentSmith integrates seamlessly with the O: Agentic Design CLI framework, allowing users to leverage natural language to automate tasks and create reusable agents. This integration enhances the functionality of AgentSmith prompts, making them more versatile and adaptable to various scenarios.
+
 ## Blog Entries
 
 - [o - AI-Powered CLI Tool](https://hans.oksendahl.com/blog/o) - An Introduction: a brief overview of the README.
 - [o - Going Deeper](https://hans.oksendahl.com/blog/o-going-deeper) - More about the author and the research process that went into the creation of this tool.
 - [Rant: Why I Refuse to Use AI Tools in My Browser](https://hans.oksendahl.com/blog/rant-about-ai-tools) - Some explanations about the impetus for the development of `o`.
-
-## Suggestions or Comments
-
-If you have any comments or suggestions about `o` feel free to contact the author <a href="mailto:hans@oksendahl.com">hans@oksendahl.com</a>. We'd love to hear from you!
