@@ -82,7 +82,6 @@ The **O** architecture has several tools available for basic file-system operati
 - **file-read**: Read the contents of a file.
 - **file-rename**: Rename a file.
 - **file-write**: Write to a file.
-- **http-request**: Make an HTTP request and return the JSON response. This tool allows you to send HTTP requests with a JSON body and receive a JSON response, supporting various HTTP methods and headers.
 
 These tools may sound basic, but they are the foundation of **O**'s unique capabilities. You can easily ask **O** to create new tools from scratch! During development, only two tools - `file-read` and `file-write` - were initially created. All other tools were generated within **O**'s self-hosted environment.
 
