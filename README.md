@@ -134,7 +134,7 @@ Getting started with **O** is straightforward! Just clone the repository and ins
 
 The LLM is set through the `--llm` (`-l`) flag.
 
-- Anthropic (`--llm anthropic`)
+- Anthropic (`--llm anthropic`) ✅
 - AWS Bedrock (`--llm aws`)
 - Cerebras (`--llm cerebras`)
 - Cohere (`--llm cohere`)
