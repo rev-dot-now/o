@@ -388,9 +388,3 @@ AgentSmith is a set of LLM agnostic system prompts for creating AI Agents. It is
 - **Repository**: [AgentSmith Repository](https://github.com/rev-dot-now/agent-smith)  
 
 AgentSmith integrates seamlessly with the O: Agentic Design framework, allowing users to leverage natural language to automate tasks and create reusable agents. This integration enhances the functionality of AgentSmith prompts, making them more versatile and adaptable to various scenarios.
-
-## Blog Entries
-
-- [o - AI-Powered CLI Tool](https://hans.oksendahl.com/blog/o) - An Introduction: a brief overview of the README.
-- [o - Going Deeper](https://hans.oksendahl.com/blog/o-going-deeper) - More about the author and the research process that went into the creation of this tool.
-- [Rant: Why I Refuse to Use AI Tools in My Browser](https://hans.oksendahl.com/blog/rant-about-ai-tools) - Some explanations about the impetus for the development of `O`.
