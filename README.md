@@ -351,12 +351,12 @@ If you need any further modifications or assistance, feel free to ask!
 
 **O** is built on a powerful tech stack that includes:
 
-- **Ink**: A library for building interactive command-line applications, enhancing the user experience.
-- **React**: For building user interfaces.
-- **LangChain**: To leverage advanced AI capabilities.
-- **Redux Toolkit**: For state management.
-- **TypeScript**: Ensuring type safety and better developer experience.
-- **Bun**: A fast JavaScript runtime for modern web applications.
+- **[Ink](https://github.com/vadimdemedes/ink)**: A library for building interactive command-line applications, enhancing the user experience.
+- **[React](https://react.dev)**: For building user interfaces.
+- **[LangChain](https://www.langchain.com)**: To leverage advanced AI capabilities.
+- **[Redux Toolkit](https://redux-toolkit.js.org)**: For state management.
+- **[TypeScript](https://www.typescriptlang.org)**: Ensuring type safety and better developer experience.
+- **[Bun](https://bun.sh)**: A fast JavaScript runtime for modern web applications.
 
 ## Ethos
 
