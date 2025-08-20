@@ -1,6 +1,6 @@
 ![image](https://github.com/user-attachments/assets/20cbd02a-47be-4dc2-b3e9-ab89f83bff88)
 
-Welcome to **O**, an agentic design framework that transforms tasks into reusable agents using natural language. Originally envisioned as "ouroboros," this cutting-edge framework empowers users to achieve automation effortlessly through natural language inputs. Whether you're crafting intricate workflows or automating everyday tasks, **O** provides the agility and intelligence needed to revolutionize your command line interactions.
+**O** is a framework that converts natural language into automation agents, streamlining task automation and workflows. It supports multiple LLM providers and offers tools for file management and command execution. With interactive and one-shot modes, **O** is versatile and user-friendly, built on a strong tech stack for seamless automation.
 
 ## Why You'll Love **O**
 
